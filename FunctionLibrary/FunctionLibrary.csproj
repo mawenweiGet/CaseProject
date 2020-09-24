@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D3A18FBF-2499-4C00-81B0-82B32B2F98FD}</ProjectGuid>
+    <OutputType>library</OutputType>
+    <RootNamespace>FunctionLibrary</RootNamespace>
+    <AssemblyName>FunctionLibrary</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ArrowLine\ArrowLine1.xaml.cs">
+      <DependentUpon>ArrowLine1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BindingStudy\DataValidation.cs" />
+    <Compile Include="BindingStudy\MultiBinding1.xaml.cs">
+      <DependentUpon>MultiBinding1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LoadConfigMenu\DataHandle\SaveXmlData.cs" />
+    <Compile Include="LoadConfigMenu\Model\MenuData.cs" />
+    <Compile Include="LoadConfigMenu\Model\MenuInfo.cs" />
+    <Compile Include="LoadConfigMenu\Model\MenuItemInfo.cs" />
+    <Compile Include="Magnifier\Magnifier1.xaml.cs">
+      <DependentUpon>Magnifier1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="ThreadTest\BackgroundWorkerStudy\Test1.xaml.cs">
+      <DependentUpon>Test1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPF_Promotion\DependencyPropertyStudy\ConfigBase.cs" />
+    <Compile Include="WPF_Promotion\DependencyPropertyStudy\MyLabel.xaml.cs">
+      <DependentUpon>MyLabel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPF_Promotion\DependencyPropertyStudy\MyLableMain.xaml.cs">
+      <DependentUpon>MyLableMain.xaml</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="ArrowLine\ArrowLine1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="BindingStudy\MultiBinding1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Magnifier\Magnifier1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ThreadTest\BackgroundWorkerStudy\Test1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPF_Promotion\DependencyPropertyStudy\MyLabel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPF_Promotion\DependencyPropertyStudy\MyLableMain.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LocalTool\LocalTool.csproj">
+      <Project>{13c2b01d-edb7-4fa0-8b84-9d10148610d4}</Project>
+      <Name>LocalTool</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ResourceBase\ResourceBase.csproj">
+      <Project>{8bf815eb-e746-47ce-a2de-45f38a6441fe}</Project>
+      <Name>ResourceBase</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Wpf_Arrows_Package\Wpf_Arrows_Package.csproj">
+      <Project>{7c57e81c-386a-4120-8bb2-5eb4738562c2}</Project>
+      <Name>Wpf_Arrows_Package</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

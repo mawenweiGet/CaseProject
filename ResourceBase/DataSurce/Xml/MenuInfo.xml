@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MenuList xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <language>zh-ch</language>
+  <displayName>Simplified_Chinese</displayName>
+  <version>1.0</version>
+  <author>Crystal</author>
+  <MenuItem Icon="&#xedf2;" Name="Function" HeaderText="功能" MenuId="1" ParentMenuId="0">
+    <MenuItem Icon="&#xedf0;" Name="Magnifier" HeaderText="放大镜" MenuId="11" ParentMenuId="1" FormName="FunctionLibrary.dll" MenuName="FunctionLibrary.Magnifier.Magnifier1" OpenType="1"></MenuItem>
+    <MenuItem Icon="&#xedf9;" Name="BackgroundWorker" HeaderText="后台线程" MenuId="12" ParentMenuId="1" FormName="FunctionLibrary.dll" MenuName="FunctionLibrary.ThreadTest.BackgroundWorkerStudy.Test1" OpenType="1"></MenuItem>
+    <MenuItem Icon="&#xede4;" Name="ArrowLine" HeaderText="箭头画线" MenuId="13" ParentMenuId="1" FormName="FunctionLibrary.dll" MenuName="FunctionLibrary.ArrowLine.ArrowLine1" OpenType="1"></MenuItem>
+    <MenuItem Icon="&#xede4;" Name="DependencyProperty" HeaderText="依赖属性" MenuId="14" ParentMenuId="1" FormName="FunctionLibrary.dll" MenuName="FunctionLibrary.WPF_Promotion.DependencyPropertyStudy.MyLableMain" OpenType="1"></MenuItem>
+    <MenuItem Icon="&#xede4;" Name="BindingStudy" HeaderText="绑定的运用" MenuId="15" ParentMenuId="1" FormName="FunctionLibrary.dll" MenuName="FunctionLibrary.BindingStudy.MultiBinding1" OpenType="1"></MenuItem>
+
+  </MenuItem>
+  <MenuItem Icon="&#xee1b;" Name="UserControl" HeaderText="用户控件" MenuId="2" ParentMenuId="0">
+    <MenuItem Icon="&#xee20;" Name="AddUser" HeaderText="添加用户" MenuId="21" ParentMenuId="2" FormName="TestControlLibrary.dll" MenuName="TestControlLibrary.UserManage.AddUser" OpenType="1"></MenuItem>
+    <MenuItem Icon="&#xede4;" Name="BankUnSign" HeaderText="数据校验" MenuId="22" ParentMenuId="2" FormName="TestControlLibrary.dll" MenuName="TestControlLibrary.InformationEntry.IdentityInfo" OpenType="1"></MenuItem>
+  </MenuItem>
+  <MenuItem Icon="&#xee31;" Name="Template" HeaderText="模版" MenuId="3" ParentMenuId="0">
+    <MenuItem Name="BaseControlPromotionTemplate" HeaderText="基础控件模版" MenuId="31" ParentMenuId="3">
+      <MenuItem Name="Button" HeaderText="按钮" MenuId="311" ParentMenuId="31" FormName="TemplateLibrary.dll" MenuName="TemplateLibrary.Button.ButonTemplate1" OpenType="1"></MenuItem>      
+      <MenuItem Name="ComboBox" HeaderText="下拉菜单" MenuId="312" ParentMenuId="31" FormName="TemplateLibrary.dll" MenuName="TemplateLibrary.ComboBox.ComboBoxTemplate1" OpenType="1"></MenuItem>      
+      <MenuItem Name="ListBox" HeaderText="菜单栏" MenuId="313" ParentMenuId="31" FormName="TemplateLibrary.dll" MenuName="TemplateLibrary.ListBox.MenuListBox1" OpenType="1"></MenuItem>      
+      <MenuItem Name="LiveCharts" HeaderText="数据视图" MenuId="314" ParentMenuId="31" FormName="TemplateLibrary.dll" MenuName="TemplateLibrary.LiveCharts.LiveChars1" OpenType="1"></MenuItem>      
+      <MenuItem Name="ProgressBar" HeaderText="进度条" MenuId="315" ParentMenuId="31" FormName="TemplateLibrary.dll" MenuName="TemplateLibrary.ProgressBar.ProgressBar1" OpenType="1"></MenuItem>      
+      <MenuItem Name="Slider1" HeaderText="滑动条1" MenuId="316" ParentMenuId="31" FormName="TemplateLibrary.dll" MenuName="TemplateLibrary.Slider.Slider1" OpenType="1"></MenuItem>      
+      <MenuItem Name="Slider2" HeaderText="滑动条2" MenuId="317" ParentMenuId="31" FormName="TemplateLibrary.dll" MenuName="TemplateLibrary.Slider.Slider2" OpenType="1"></MenuItem>
+      <MenuItem Name="TextBox1" HeaderText="输入文本1" MenuId="318" ParentMenuId="31" FormName="TemplateLibrary.dll" MenuName="TemplateLibrary.TextBok.TextBokTemplate1" OpenType="1"></MenuItem>
+    </MenuItem>
+    <MenuItem Name="BaseControlTemplate" HeaderText="晋级控件模版" MenuId="32" ParentMenuId="3">
+      <MenuItem Name="Input_Information" HeaderText="数据填充" MenuId="321" ParentMenuId="32" FormName="TemplateLibrary.dll" MenuName="TemplateLibrary.BaseControlPromotionTemplate.Input_Information.InputInformation1" OpenType="1"></MenuItem>      
+      <MenuItem Name="ComboBoxChoice" HeaderText="数据选择" MenuId="322" ParentMenuId="32" FormName="TemplateLibrary.dll" MenuName="TemplateLibrary.BaseControlPromotionTemplate.ComboBoxChoice.ComboBox1" OpenType="1"></MenuItem>      
+      <MenuItem Name="SwitchChoice" HeaderText="开关选择" MenuId="323" ParentMenuId="32" FormName="TemplateLibrary.dll" MenuName="TemplateLibrary.BaseControlPromotionTemplate.SwitchChoice。SwitchChoice1" OpenType="1"></MenuItem>      
+      
+    </MenuItem>
+  </MenuItem>
+  <MenuItem Icon="&#xed85;" Name="Help" HeaderText="帮助" MenuId="9" ParentMenuId="0">
+    <MenuItem Name="HelpHotKey" HeaderText="热键帮助" MenuId="91" ParentMenuId="9" FormName="" MenuName="" OpenType="0"></MenuItem>
+    <MenuItem Name="HelpNormalQues" HeaderText="常见问题" MenuId="92" ParentMenuId="9" FormName="" MenuName="" OpenType="0"></MenuItem>
+    <MenuItem Name="HelpTelphone" HeaderText="电话服务" MenuId="93" ParentMenuId="9" FormName="" MenuName="" OpenType="0"></MenuItem>
+    <MenuItem Name="HelpProductBook" HeaderText="产品说明书" MenuId="94" ParentMenuId="9" FormName="" MenuName="" OpenType="0"></MenuItem>
+    <MenuItem Name="HelpAbout" HeaderText="关于产品" MenuId="95" ParentMenuId="9"></MenuItem>
+  </MenuItem>
+</MenuList>

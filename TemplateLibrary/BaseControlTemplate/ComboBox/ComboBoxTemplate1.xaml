@@ -1,0 +1,35 @@
+﻿<UserControl x:Class="TemplateLibrary.ComboBox.ComboBoxTemplate1"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:TemplateLibrary.ComboBox"
+             mc:Ignorable="d">
+    <StackPanel Orientation="Vertical">
+        <ComboBox x:Name="myColorComBox" HorizontalAlignment="Left" VerticalAlignment="Top" Width="309" Height="48"  >
+            <!--ItemTemplate-->
+            <ComboBox.ItemTemplate>
+                <!--DataTemplate开始-->
+                <DataTemplate>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="36"/>
+                            <ColumnDefinition Width="100*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="50*"/>
+                            <RowDefinition Height="50*"/>
+                        </Grid.RowDefinitions>
+                        <!--绑定数据对象Image属性-->
+                        <Image Source="{Binding Image}" Width="32" Height="32" Margin="3,3,3,3" Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" />
+                        <!--绑定数据对象Name属性-->
+                        <TextBlock Text="{Binding Name}" FontSize="12"  Grid.Row="0" Grid.Column="1" HorizontalAlignment="Left"  VerticalAlignment="Center"/>
+                        <!--绑定数据对象Desc属性-->
+                        <TextBlock Text="{Binding Desc}" FontSize="10" Grid.Row="1" Grid.Column="1"  HorizontalAlignment="Left"  VerticalAlignment="Center"/>
+                    </Grid>
+                </DataTemplate>
+                <!--DataTemplate结束-->
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+    </StackPanel>
+</UserControl>

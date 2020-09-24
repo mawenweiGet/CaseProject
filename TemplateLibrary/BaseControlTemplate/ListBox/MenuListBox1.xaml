@@ -1,0 +1,63 @@
+﻿<UserControl x:Class="TemplateLibrary.ListBox.MenuListBox1"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:TemplateLibrary.ListBox"
+             mc:Ignorable="d">
+    <UserControl.Resources>
+        <Style x:Key="UserInfoStyle" TargetType="{x:Type ListBoxItem}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type ListBoxItem}">
+                        <Grid Height="50" x:Name="grid">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="3*"/>
+                                <ColumnDefinition Width="7*"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Grid.Column="0" 
+                                       x:Name="iconCode"
+                                       Text="{Binding IconCode}"     
+                                       Margin="2"
+                                       FontSize="23" Foreground="White" 
+                                       FontFamily="{Binding m_IconPath}"
+                                       VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                            <TextBlock Grid.Column="1" 
+                                       x:Name="info"
+                                       FontSize="12"
+                                       FontFamily="Courier New"
+                                       MaxWidth="150"  
+                                       TextWrapping="Wrap"
+                                       HorizontalAlignment="Center"
+                                       VerticalAlignment="Center" 
+                                       Text="{Binding Info}" 
+                                       Foreground="#808080"/>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter TargetName="grid" Property="Background" Value="#FAFAFA"/>
+                                <Setter TargetName="iconCode" Property="Foreground" Value="#05051D"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="False">
+                                <Setter TargetName="iconCode" Property="Foreground" Value="#05051D"/>
+                            </Trigger>
+                            <Trigger Property="Selector.IsSelected" Value="true">
+                                <Setter TargetName="info" Property="Foreground" Value="#2020CE"/>
+                                <Setter TargetName="iconCode" Property="Foreground" Value="#2020CE"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
+    <Grid>
+        <ListBox VerticalAlignment="Top" 
+                 x:Name="UserInfoList"
+                 BorderThickness="1" 
+                 ItemContainerStyle="{StaticResource UserInfoStyle}"  
+                 BorderBrush="#eaeaeb"
+                 >
+        </ListBox>
+    </Grid>
+</UserControl>

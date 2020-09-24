@@ -1,0 +1,32 @@
+﻿<UserControl x:Class="FunctionLibrary.Magnifier.Magnifier1"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:FunctionLibrary.Magnifier"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid Name="rootLayout">
+        <Grid Name="contextArea" PreviewMouseMove="contextArea_PreviewMouseMove" Background="Transparent">
+            <Image Source="pack://application:,,,/ResourceBase;component/ImageResources/TemporaryUsing/jietu1.png" Margin="0" Stretch="UniformToFill"/>
+            <TextBox Text="放大镜功能~" Width="150" Height="50" Background="AliceBlue" BorderBrush="Transparent" HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
+        </Grid>
+        <Canvas>
+            <Canvas Name="magnifierCanvas" IsHitTestVisible="False">
+                <Ellipse Width="150" Height="150" StrokeThickness="3" Fill="LightBlue" />
+                <!--为了看得清楚椭圆控件我再添加了一个一样大小的Ellipse重叠再一起,  
+                    将其背景颜色设置为LightBlue  
+                    当然你也可以不要这个Ellipse 可以删除-->
+                <!--magnifierEllipse就是我们要填充的控件  就像上一个的Rectangle控件-->
+                <Ellipse Width="150" Height="150" Name="magnifierEllipse">
+                    <Ellipse.Fill>
+                        <VisualBrush x:Name="vb" Visual="{Binding ElementName=contextArea}" Stretch="UniformToFill" 
+                                     ViewboxUnits="Absolute" Viewbox="0, 25, 50, 50"
+                                     ViewportUnits="RelativeToBoundingBox" Viewport="0, 0, 1, 1">
+                        </VisualBrush>
+                    </Ellipse.Fill>
+                </Ellipse>
+            </Canvas>
+        </Canvas>
+    </Grid>
+</UserControl>
