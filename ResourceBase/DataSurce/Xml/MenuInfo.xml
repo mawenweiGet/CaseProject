@@ -15,6 +15,8 @@
   <MenuItem Icon="&#xee1b;" Name="UserControl" HeaderText="用户控件" MenuId="2" ParentMenuId="0">
     <MenuItem Icon="&#xee20;" Name="AddUser" HeaderText="添加用户" MenuId="21" ParentMenuId="2" FormName="TestControlLibrary.dll" MenuName="TestControlLibrary.UserManage.AddUser" OpenType="1"></MenuItem>
     <MenuItem Icon="&#xede4;" Name="BankUnSign" HeaderText="数据校验" MenuId="22" ParentMenuId="2" FormName="TestControlLibrary.dll" MenuName="TestControlLibrary.InformationEntry.IdentityInfo" OpenType="1"></MenuItem>
+    <MenuItem Icon="&#xede4;" Name="RangeAdjustment" HeaderText="数据录入" MenuId="23" ParentMenuId="2" FormName="TestControlLibrary.dll" MenuName="TestControlLibrary.DataAdjustment.RangeAdjustment.RangeAdjustment1" OpenType="1"></MenuItem>
+
   </MenuItem>
   <MenuItem Icon="&#xee31;" Name="Template" HeaderText="模版" MenuId="3" ParentMenuId="0">
     <MenuItem Name="BaseControlPromotionTemplate" HeaderText="基础控件模版" MenuId="31" ParentMenuId="3">

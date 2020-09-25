@@ -48,6 +48,9 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataAdjustment\RangeAdjustment\RangeAdjustment1.xaml.cs">
+      <DependentUpon>RangeAdjustment1.xaml</DependentUpon>
+    </Compile>
     <Compile Include="InformationEntry\IdentityInfo.xaml.cs">
       <DependentUpon>IdentityInfo.xaml</DependentUpon>
     </Compile>
@@ -77,6 +80,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Page Include="DataAdjustment\RangeAdjustment\RangeAdjustment1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="InformationEntry\IdentityInfo.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -90,6 +97,10 @@
     <ProjectReference Include="..\ResourceBase\ResourceBase.csproj">
       <Project>{8bf815eb-e746-47ce-a2de-45f38a6441fe}</Project>
       <Name>ResourceBase</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TemplateLibrary\TemplateLibrary.csproj">
+      <Project>{8f40b3dc-f9cf-4030-b278-236c989b1ba7}</Project>
+      <Name>TemplateLibrary</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
