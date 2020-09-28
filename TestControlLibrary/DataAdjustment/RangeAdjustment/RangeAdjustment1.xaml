@@ -21,8 +21,7 @@
             </Style.Triggers>
         </Style>
     </UserControl.Resources>
-    <UniformGrid Columns="2">
-        <Label Content="1212" Background="Red"/>
-        <Label Content="42345" Background="AliceBlue"/>
-    </UniformGrid>
+    <Grid>
+        <MediaElement/>
+    </Grid>
 </UserControl>

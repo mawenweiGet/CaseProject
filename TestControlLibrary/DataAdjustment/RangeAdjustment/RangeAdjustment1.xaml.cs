@@ -25,14 +25,42 @@ namespace TestControlLibrary.DataAdjustment.RangeAdjustment
         {
             InitializeComponent();
 
-            this.Explain_Label.Content = "输出设置";
+            StartCMD();
+        }
+        public void StartCMD()
+        {
 
-            ComboBoxTemplate1 input = new ComboBoxTemplate1();
+            System.Diagnostics.Process p = new System.Diagnostics.Process();
+            //设置要启动的应用程序
+            p.StartInfo.FileName = "cmd.exe";
+            //是否使用操作系统shell启动
+            p.StartInfo.UseShellExecute = false;
+            // 接受来自调用程序的输入信息
+            p.StartInfo.RedirectStandardInput = true;
+            //输出信息
+            p.StartInfo.RedirectStandardOutput = true;
+            // 输出错误
+            p.StartInfo.RedirectStandardError = true;
+            //显示程序窗口
+            p.StartInfo.CreateNoWindow = true;
+            p.StartInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Normal;
+            //启动程序
+            p.Start();
 
-            this.Content_StackPane.Children.Add(input);
+            //向cmd窗口发送输入信息
+            p.StandardInput.WriteLine("ipconfig" + "&exit");
 
+            p.StandardInput.AutoFlush = true;
+            //p.StandardInput.WriteLine("exit");
+            //向标准输入写入要执行的命令。这里使用&是批处理命令的符号，表示前面一个命令不管是否执行成功都执行后面(exit)命令，如果不执行exit命令，后面调用ReadToEnd()方法会假死
+            //同类的符号还有&&和||前者表示必须前一个命令执行成功才会执行后面的命令，后者表示必须前一个命令执行失败才会执行后面的命令
 
-
+            //获取输出信息
+            string sOutput = p.StandardOutput.ReadToEnd();
+            //等待程序执行完退出进程
+            p.WaitForExit();
+            p.Close();
+            MessageBox.Show(sOutput);
         }
     }
 }
