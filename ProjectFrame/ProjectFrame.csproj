@@ -125,6 +125,10 @@
       <Project>{7c57e81c-386a-4120-8bb2-5eb4738562c2}</Project>
       <Name>Wpf_Arrows_Package</Name>
     </ProjectReference>
+    <ProjectReference Include="..\WPF_BaseStudy\WPF_BaseStudy.csproj">
+      <Project>{2b40684a-d7ae-4b36-951f-0e99890da358}</Project>
+      <Name>WPF_BaseStudy</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

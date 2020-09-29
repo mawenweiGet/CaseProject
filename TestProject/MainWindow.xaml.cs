@@ -35,7 +35,7 @@ namespace TestProject
              Source=t,
              Mode= BindingMode.TwoWay,
             };
-            this.ErrContent.SetBinding(TextBox.TextProperty,b);
+            //this.ErrContent.SetBinding(TextBox.TextProperty,b);
         }
 
         private void ErrContent_TextChanged(object sender, TextChangedEventArgs e)

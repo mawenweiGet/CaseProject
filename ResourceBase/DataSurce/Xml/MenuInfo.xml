@@ -9,7 +9,6 @@
     <MenuItem Icon="&#xedf9;" Name="BackgroundWorker" HeaderText="后台线程" MenuId="12" ParentMenuId="1" FormName="FunctionLibrary.dll" MenuName="FunctionLibrary.ThreadTest.BackgroundWorkerStudy.Test1" OpenType="1"></MenuItem>
     <MenuItem Icon="&#xede4;" Name="ArrowLine" HeaderText="箭头画线" MenuId="13" ParentMenuId="1" FormName="FunctionLibrary.dll" MenuName="FunctionLibrary.ArrowLine.ArrowLine1" OpenType="1"></MenuItem>
     <MenuItem Icon="&#xede4;" Name="DependencyProperty" HeaderText="依赖属性" MenuId="14" ParentMenuId="1" FormName="FunctionLibrary.dll" MenuName="FunctionLibrary.WPF_Promotion.DependencyPropertyStudy.MyLableMain" OpenType="1"></MenuItem>
-    <MenuItem Icon="&#xede4;" Name="BindingStudy" HeaderText="绑定的运用" MenuId="15" ParentMenuId="1" FormName="FunctionLibrary.dll" MenuName="FunctionLibrary.BindingStudy.MultiBinding1" OpenType="1"></MenuItem>
 
   </MenuItem>
   <MenuItem Icon="&#xee1b;" Name="UserControl" HeaderText="用户控件" MenuId="2" ParentMenuId="0">
@@ -33,9 +32,21 @@
     <MenuItem Name="BaseControlTemplate" HeaderText="晋级控件模版" MenuId="32" ParentMenuId="3">
       <MenuItem Name="Input_Information" HeaderText="数据填充" MenuId="321" ParentMenuId="32" FormName="TemplateLibrary.dll" MenuName="TemplateLibrary.BaseControlPromotionTemplate.Input_Information.InputInformation1" OpenType="1"></MenuItem>      
       <MenuItem Name="ComboBoxChoice" HeaderText="数据选择" MenuId="322" ParentMenuId="32" FormName="TemplateLibrary.dll" MenuName="TemplateLibrary.BaseControlPromotionTemplate.ComboBoxChoice.ComboBox1" OpenType="1"></MenuItem>      
-      <MenuItem Name="SwitchChoice" HeaderText="开关选择" MenuId="323" ParentMenuId="32" FormName="TemplateLibrary.dll" MenuName="TemplateLibrary.BaseControlPromotionTemplate.SwitchChoice。SwitchChoice1" OpenType="1"></MenuItem>      
-      
+      <MenuItem Name="SwitchChoice" HeaderText="开关选择" MenuId="323" ParentMenuId="32" FormName="TemplateLibrary.dll" MenuName="TemplateLibrary.BaseControlPromotionTemplate.SwitchChoice.SwitchChoice1" OpenType="1"></MenuItem>      
+      <MenuItem Name="DateTimeControl" HeaderText="时间控件" MenuId="324" ParentMenuId="32" FormName="TemplateLibrary.dll" MenuName="TemplateLibrary.BaseControlPromotionTemplate.TimeControl.TimeControl1" OpenType="1"></MenuItem>      
+    
     </MenuItem>
+  </MenuItem>
+  <MenuItem Icon="&#xf0e3;" Name="Basic" HeaderText="基础运用" MenuId="4" parentMenuId="0">
+        <MenuItem Name="BaseControlPromotionTemplate" HeaderText="数据绑定运用" MenuId="41" ParentMenuId="4">
+           <MenuItem Icon="&#xf260;" Name="DataBinding" HeaderText="数据绑定讲解" MenuId="411" ParentMenuId="41" FormName="WPF_BaseStudy.dll" MenuName="WPF_BaseStudy.BindingStudy.BinDingStudy1" OpenType="1"></MenuItem>
+           <MenuItem Icon="&#xf260;" Name="XamlDataBinding" HeaderText="xaml绑定运用" MenuId="412" ParentMenuId="41" FormName="FunctionLibrary.dll" MenuName="FunctionLibrary.BindingStudy.MultiBinding1" OpenType="1"></MenuItem>
+           <MenuItem Icon="&#xf260;" Name="ObjectDataProvider" HeaderText="非Source绑定" MenuId="413" ParentMenuId="41" FormName="WPF_BaseStudy.dll" MenuName="WPF_BaseStudy.BindingStudy.BinDingStudy2"  OpenType="1"></MenuItem>
+           <MenuItem Icon="&#xf260;" Name="MultiBinding" HeaderText="多BinDing" MenuId="414" ParentMenuId="41" FormName="WPF_BaseStudy.dll" MenuName="WPF_BaseStudy.BindingStudy.BinDingStudy3"  OpenType="1"></MenuItem>        
+        </MenuItem>
+    
+    <MenuItem Icon="&#xf0e7;" Name="Event" HeaderText="Event事件" MenuId="42" ParentMenuId="4" FormName="WPF_BaseStudy.dll" MenuName="WPF_BaseStudy.Event.EventExplain" OpenType="1"></MenuItem>
+
   </MenuItem>
   <MenuItem Icon="&#xed85;" Name="Help" HeaderText="帮助" MenuId="9" ParentMenuId="0">
     <MenuItem Name="HelpHotKey" HeaderText="热键帮助" MenuId="91" ParentMenuId="9" FormName="" MenuName="" OpenType="0"></MenuItem>

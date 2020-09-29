@@ -8,61 +8,10 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800" MouseLeftButtonDown="Window_MouseLeftButtonDown">
     <Window.Resources>
-        <Style x:Key="k1">
-            <Style.Triggers>
-                <DataTrigger Binding="{Binding ElementName=btn,Path=IsMouseOver}" Value="True">
-                    <Setter Property="Grid.Background" Value="Orange"/>
-                </DataTrigger>
-            </Style.Triggers>
-        </Style>
-        <Style x:Key="k2">
-            <Style.Triggers>
-                <DataTrigger Binding="{Binding ElementName=btn,Path=IsMouseOver}" Value="True">
-                    <Setter Property="Grid.Background" Value="Blue"/>
-                </DataTrigger>
-            </Style.Triggers>
-        </Style>
-        <Style x:Key="errcontent">
-            <Style.Triggers>
-                <DataTrigger Binding="{Binding ElementName=m_Content,Path=(Validation.HasError)}" Value="True">
-                    <Setter Property="Grid.Background" Value="Red"/>
-                </DataTrigger>
-            </Style.Triggers>
-        </Style>
+
     </Window.Resources>
-    <Grid>
-        <StackPanel Visibility="Visible">
-            <Slider Margin="10,120,-10,-120" Minimum="0" Maximum="100" Name="slider" Value="10"></Slider>
-            <TextBox Height="50" Margin="5,30,5,240" x:Name="m_Content">
-                <TextBox.Text>
-                    <Binding ElementName="slider" Path="Value" UpdateSourceTrigger="PropertyChanged">
-                        <Binding.ValidationRules>
-                            <p:RangeValidationRule/>
-                        </Binding.ValidationRules>
-                    </Binding>
-                </TextBox.Text>
-            </TextBox>
+    
+    <p:ClockUserCtrl Width="250" Height="100" HorizontalAlignment="Center" VerticalAlignment="Center"/>
 
-            <Grid Style="{StaticResource errcontent}">
-                <TextBlock Name="ErrContent"
-                       Text="0876"
-                     
-                 />
-            </Grid>
-           
-
-        </StackPanel>
-        <StackPanel Visibility="Collapsed">
-            <Grid Grid.Row="0">
-                <Button x:Name="btn"  Margin="10"/>
-            </Grid>
-            <Grid Grid.Row="1" Style="{StaticResource k1}">
-                <Button Margin="10"/>
-            </Grid>
-            <Grid Grid.Row="2" Style="{StaticResource k2}">
-                <Button Margin="10"/>
-            </Grid>
-        </StackPanel>
-    </Grid>
 
 </Window>

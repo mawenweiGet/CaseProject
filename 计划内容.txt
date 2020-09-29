@@ -1,6 +1,14 @@
 1：菜单通过xml配置加载
+    （1）菜单通过ResourceBase类库下的DataSurce文件夹中的MenuInfo.xml文件获取配置信息   
+              <MenuItem Icon="图标代码" Name="菜单Name" HeaderText="说明文本" MenuId="菜单Id标识" ParentMenuId="是否主菜单标识（0：是~1：否）">
+                  <MenuItem Icon="图标代码;" Name="菜单Name" HeaderText="说明文" MenuId="主菜单下的子菜单Id标识" ParentMenuId="是否主菜单标识" FormName="所在类库.dll" MenuName="完整位置命名空间" OpenType="开发方式（1：用户控件2：windows窗体）"></MenuItem>
+              </MenuItem>
+2：图标字体文件
+    （1）图标字体文件使用svg矢量图在Icon网站生成的字体文件获得。
+    （2）文件放置在ResourceBase类库下的Font文件夹中。
+    （3）xml中使用方式为 （属性="&#xee20;"）类中使用（属性 ="\uee20",）
 
-2：
+3：
 
 
 

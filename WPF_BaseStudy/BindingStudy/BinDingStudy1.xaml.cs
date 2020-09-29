@@ -13,26 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace TestProject
+namespace WPF_BaseStudy.BindingStudy
 {
     /// <summary>
-    /// MyLabel.xaml 的交互逻辑
+    /// BinDingStudy1.xaml 的交互逻辑
     /// </summary>
-    public partial class MyLabel : UserControl
+    public partial class BinDingStudy1 : UserControl
     {
-        public static readonly DependencyProperty CaptionProperty =
-    DependencyProperty.Register("Caption", typeof(string), typeof(MyLabel));
-        public MyLabel()
+        public BinDingStudy1()
         {
             InitializeComponent();
         }
-        public string Caption
-        {
-            get { return (string)GetValue(CaptionProperty); }
-            set { SetValue(CaptionProperty, value); }
-        }
-
-
-
     }
 }

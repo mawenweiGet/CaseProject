@@ -96,6 +96,13 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="ImageResources\ProjectUsing\Event\EventExplen1.png" />
+    <Resource Include="ImageResources\ProjectUsing\BinDing\BinDingExplent5.png" />
+    <Resource Include="ImageResources\ProjectUsing\BinDing\BinDingExplent4.png" />
+    <Resource Include="ImageResources\ProjectUsing\BinDing\BinDingExplent3.png" />
+    <Resource Include="ImageResources\ProjectUsing\BinDing\BinDingExplent2.png" />
+    <Resource Include="ImageResources\ProjectUsing\BinDing\BinDingExplent1.png" />
+    <Resource Include="ImageResources\ProjectUsing\BinDing\BindingExplainImage.png" />
     <EmbeddedResource Include="DataSurce\Xml\MenuInfo.xml" />
     <Content Include="Font\fontawesome-webfont.svg" />
     <Content Include="Font\icomoon.svg" />
@@ -122,5 +129,6 @@
   <ItemGroup>
     <Resource Include="ImageResources\ProjectUsing\wave2.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

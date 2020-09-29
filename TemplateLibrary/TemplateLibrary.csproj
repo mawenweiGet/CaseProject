@@ -63,6 +63,9 @@
     <Compile Include="BaseControlPromotionTemplate\SwitchChoice\SwitchChoice1.xaml.cs">
       <DependentUpon>SwitchChoice1.xaml</DependentUpon>
     </Compile>
+    <Compile Include="BaseControlPromotionTemplate\TimeControl\TimeControl1.xaml.cs">
+      <DependentUpon>TimeControl1.xaml</DependentUpon>
+    </Compile>
     <Compile Include="BaseControlTemplate\Button\ButonTemplate1.xaml.cs">
       <DependentUpon>ButonTemplate1.xaml</DependentUpon>
     </Compile>
@@ -103,7 +106,7 @@
     <Compile Include="BaseControlTemplate\Slider\Slider2.xaml.cs">
       <DependentUpon>Slider2.xaml</DependentUpon>
     </Compile>
-    <Compile Include="TextBok\TextBokTemplate1.xaml.cs">
+    <Compile Include="BaseControlTemplate\TextBok\TextBokTemplate1.xaml.cs">
       <DependentUpon>TextBokTemplate1.xaml</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -125,6 +128,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="BaseControlPromotionTemplate\SwitchChoice\SwitchChoice1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="BaseControlPromotionTemplate\TimeControl\TimeControl1.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -164,7 +171,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="TextBok\TextBokTemplate1.xaml">
+    <Page Include="BaseControlTemplate\TextBok\TextBokTemplate1.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

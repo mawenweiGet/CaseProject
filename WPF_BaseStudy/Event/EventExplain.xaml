@@ -1,0 +1,17 @@
+﻿<UserControl x:Class="WPF_BaseStudy.Event.EventExplain"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WPF_BaseStudy.Event"
+             mc:Ignorable="d">
+    <ScrollViewer>
+        <StackPanel Orientation="Vertical">
+            <Image x:Name="i_Image" Source="pack://application:,,,/ResourceBase;component/ImageResources/ProjectUsing/Event/EventExplen1.png" Width="{Binding ActualWidth, ElementName=i_ImageExplain}"/>
+
+            <Button Width="200" Height="30" Content="典型“猫叫”案例" Click="Button_Click"/>
+
+            <TextBlock x:Name="TB_Content" Width="500" Height="auto" TextWrapping="Wrap"/>
+        </StackPanel>
+    </ScrollViewer>
+</UserControl>

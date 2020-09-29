@@ -1,0 +1,47 @@
+﻿<UserControl x:Class="WPF_BaseStudy.BindingStudy.BinDingStudy1"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WPF_BaseStudy.BindingStudy"
+             mc:Ignorable="d">
+    <UserControl.Resources>
+        <Style TargetType="TextBlock">
+            <Setter Property="Margin" Value="15 10 15 5"/>
+        </Style>
+    </UserControl.Resources>
+    <ScrollViewer>
+        <StackPanel Orientation="Vertical">
+            <Image x:Name="i_Image" Source="pack://application:,,,/ResourceBase;component/ImageResources/ProjectUsing/BinDing/BindingExplainImage.png" Width="{Binding ActualWidth, ElementName=i_ImageExplain}"/>
+            
+            <TextBlock FontSize="20" Height="auto" Foreground="Red" Width="{Binding ElementName=i_Image,Path=ActualWidth}" TextWrapping="Wrap"
+                       Text="Binding 的源也就是数据的源头。Binding对源的要求并不苛刻------只要它是一个对象，并且通过属性(Property)公开自己的数据，它就能作为Binding 的源。
+                       该部分TextBlock文本控件的宽度即使用绑定，绑定到了上面图片控件的宽度上。"/>
+
+            <TextBlock FontSize="20" Height="auto" Width="{Binding ActualWidth, ElementName=i_Image}" TextWrapping="Wrap" Text="语法简化：
+C#代码中可以直接访问控件对象，所以一般不会使用Binding的ElementName属性，而是直接赋值给Binding的Sourece属性。如（Width=‘{Binding ActualWidth, ElementName=i_Image}’）"/>
+
+
+            <TextBlock  FontSize="20" Height="auto" Width="{Binding ActualWidth, ElementName=i_Image}" TextWrapping="Wrap"
+                       Text="Binding在源与目标之间架起了沟通的桥梁，默认情况下数据即可以通过Binding送达目标，也可以通过目标回到源(收集用户对数据的修改)。
+有时候数据只需要展示给用户，不需要用户修改，这时候可以把Binding模式设置为从目标向源的单向沟通以及只在Binding关系确立时读取一次数据，这需要我们根据实际情况选择。"/>
+
+            <TextBlock FontSize="20" Height="auto" Width="{Binding ActualWidth, ElementName=i_Image}" TextWrapping="Wrap"
+                       Text="控制Binding数据流向的属性是Model，它的类型是BindingModel的枚举。BindingModel可以取值为TwoWay、OneWay、OneTime、OneWayToSource和Default。
+这里的Default指的是Binding的模式会根据目标是实际情况来确定，不如是可以编辑的（TextBox的Text属性），Default就采用双向模式。如果是TextBlock，不可编辑，就使用单向模式。"/>
+
+            <Image x:Name="i_ImageExplain" Source="pack://application:,,,/ResourceBase;component/ImageResources/ProjectUsing/BinDing/BinDingExplent1.png"/>
+
+            <Image Source="pack://application:,,,/ResourceBase;component/ImageResources/ProjectUsing/BinDing/BinDingExplent2.png" Width="{Binding ActualWidth, ElementName=i_ImageExplain}"/>
+
+            <TextBlock FontSize="20" Height="auto" Width="{Binding ActualWidth, ElementName=i_Image}" TextWrapping="Wrap"
+                       Text=" Binding的数据校验" Foreground="Red"/>
+            <Image Source="pack://application:,,,/ResourceBase;component/ImageResources/ProjectUsing/BinDing/BinDingExplent3.png" Width="{Binding ActualWidth, ElementName=i_ImageExplain}"/>
+            <Image Source="pack://application:,,,/ResourceBase;component/ImageResources/ProjectUsing/BinDing/BinDingExplent4.png" Width="{Binding ActualWidth, ElementName=i_ImageExplain}"/>
+            <Image Source="pack://application:,,,/ResourceBase;component/ImageResources/ProjectUsing/BinDing/BinDingExplent5.png" Width="{Binding ActualWidth, ElementName=i_ImageExplain}"/>
+
+
+
+        </StackPanel>
+    </ScrollViewer>
+</UserControl>
