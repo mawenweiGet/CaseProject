@@ -105,7 +105,7 @@ namespace Modbus.Device
         Task WriteSingleCoilAsync(byte slaveAddress, ushort coilAddress, bool value);
 
         /// <summary>
-        ///    Writes a single holding register.
+        ///   写入一个保持寄存器
         /// </summary>
         /// <param name="slaveAddress">Address of the device to write to.</param>
         /// <param name="registerAddress">Address to write.</param>
@@ -122,7 +122,7 @@ namespace Modbus.Device
         Task WriteSingleRegisterAsync(byte slaveAddress, ushort registerAddress, short value);
 
         /// <summary>
-        ///    Writes a block of 1 to 123 contiguous registers.
+        ///    写入由1到123个连续寄存器组成的块
         /// </summary>
         /// <param name="slaveAddress">Address of the device to write to.</param>
         /// <param name="startAddress">Address to begin writing values.</param>

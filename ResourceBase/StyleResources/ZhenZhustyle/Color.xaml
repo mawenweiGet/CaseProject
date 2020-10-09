@@ -1,0 +1,23 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <SolidColorBrush x:Key="CZBlue" Color="#0140A2"/>
+    <SolidColorBrush x:Key="CZAliceBlue" Color="AliceBlue"/>
+    <SolidColorBrush x:Key="CZGreen" Color="Green"/>
+    <SolidColorBrush x:Key="CZWhite" Color="White"/>
+    <SolidColorBrush x:Key="CZBlack" Color="Black"/>
+    <SolidColorBrush x:Key="CZYellow" Color="Yellow"/>
+    <SolidColorBrush x:Key="CZDisabledColor" Color="Gray"/>
+    <SolidColorBrush x:Key="CZTitle" Color="WhiteSmoke"/>
+    <SolidColorBrush x:Key="CZLabelBrush" Color="SandyBrown"/>
+    <SolidColorBrush x:Key="CZOrange" Color="Orange"/>
+    <SolidColorBrush x:Key="CZGray" Color="LightGray"/>
+    <SolidColorBrush x:Key="FBInputColor" Color="Blue"/>
+    <SolidColorBrush x:Key="FBOutputColor" Color="Green"/>
+    <SolidColorBrush x:Key="FBBGColor" Color="IndianRed" Opacity="0.5"/>
+    <SolidColorBrush x:Key="FBBGColorBlue" Color="#0140A2" Opacity="0.5"/>
+    <SolidColorBrush x:Key="CZLightGreen" Color="#89C980"/>
+    <SolidColorBrush x:Key="FBSelectedBGColor" Color="LightGray" 
+                     Opacity="1"/>
+
+</ResourceDictionary>

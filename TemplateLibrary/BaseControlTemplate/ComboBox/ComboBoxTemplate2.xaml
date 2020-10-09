@@ -37,14 +37,15 @@
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type ToggleButton}">
-                        <Border x:Name="templateRoot" CornerRadius="5" SnapsToDevicePixels="true" Background="{TemplateBinding Background}" BorderThickness="0" BorderBrush="#45C4ED">
+                        <Border x:Name="templateRoot" CornerRadius="0" SnapsToDevicePixels="true" Background="{TemplateBinding Background}" BorderThickness="0" BorderBrush="#45C4ED">
                             <Border x:Name="splitBorder" CornerRadius="1" Width="auto" SnapsToDevicePixels="true" Margin="0" HorizontalAlignment="Right" 
                                         BorderThickness="{TemplateBinding BorderThickness}" BorderBrush="#FF565656">
-                                <!--<Path x:Name="arrow" VerticalAlignment="Center" Margin="9,7.006,5,10" Stretch="Fill" Height="5.994" Width="13.156" 
-                                HorizontalAlignment="Left" Fill="#45C4ED" Data="M 50,50 L 0,0 100,0 z"/>-->
-
                                 <Path x:Name="arrow" VerticalAlignment="Center" Margin="9,7.006,5,10" Stretch="Fill" Height="5.994" Width="13.156" 
-                                HorizontalAlignment="Left" Fill="#45C4ED" Data="M 15,0 L 0,15 30,15 z"/>
+                                HorizontalAlignment="Left" Fill="#45C4ED" Data="M 50,50 L 0,0 100,0 z">
+                                </Path>
+                                <!--向上三角形-->
+                                <!--<Path x:Name="arrow" VerticalAlignment="Center" Margin="9,7.006,5,10" Stretch="Fill" Height="5.994" Width="13.156" 
+                                HorizontalAlignment="Left" Fill="#45C4ED" Data="M 15,0 L 0,15 30,15 z"/>-->
                                 
                             </Border>
                         </Border>
@@ -52,13 +53,15 @@
                             <MultiDataTrigger>
                                 <MultiDataTrigger.Conditions>
                                     <Condition Binding="{Binding IsEditable, RelativeSource={RelativeSource AncestorType={x:Type ComboBox}}}" Value="true"/>
-                                    <Condition Binding="{Binding IsMouseOver, RelativeSource={RelativeSource Self}}" Value="false"/>
-                                    <Condition Binding="{Binding IsPressed, RelativeSource={RelativeSource Self}}" Value="false"/>
+                                    <Condition Binding="{Binding IsMouseOver, RelativeSource={RelativeSource Self}}" Value="true"/>
+                                    <Condition Binding="{Binding IsPressed, RelativeSource={RelativeSource Self}}" Value="True"/>
                                     <Condition Binding="{Binding IsEnabled, RelativeSource={RelativeSource Self}}" Value="true"/>
                                 </MultiDataTrigger.Conditions>
-                                <Setter Property="BorderBrush" TargetName="templateRoot" Value="red"/>
                                 <Setter Property="Data" TargetName="arrow" Value="M 15,0 L 0,15 30,15 z"/>
                             </MultiDataTrigger>
+                            <Trigger Property="Focusable"  Value="True">
+                                <Setter Property="Data" TargetName="arrow" Value="M 15,0 L 0,15 30,15 z"/>
+                            </Trigger>
                             <Trigger Property="IsEnabled" Value="false">
                                 <Setter Property="Fill" TargetName="arrow" Value="#FFADADAD"/>
                                 <Setter Property="BorderBrush" TargetName="templateRoot" Value="#FFADADAD"/>

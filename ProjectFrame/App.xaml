@@ -4,6 +4,15 @@
              xmlns:local="clr-namespace:ProjectFrame"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <!--全局资源字典-->
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/ResourceBase;component/Language/Font-zh-CN.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/ResourceBase;component/StyleResources/ZhenZhustyle/ComboBoxTheme.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/ResourceBase;component/StyleResources/ZhenZhustyle/TextBlockTheme.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/ResourceBase;component/StyleResources/ZhenZhustyle/ButtonTheme.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/ResourceBase;component/StyleResources/ZhenZhustyle/Color.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>

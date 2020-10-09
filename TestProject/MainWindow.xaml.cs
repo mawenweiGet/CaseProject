@@ -21,46 +21,31 @@ namespace TestProject
     /// </summary>
     public partial class MainWindow : Window
     {
-        public class Testconntent
-        { 
-        public string TestConteon = "3423";
-        }
-        Testconntent t = new Testconntent();
         public MainWindow()
         {
             InitializeComponent();
 
-            Binding b = new Binding("TestConteon")
-            { 
-             Source=t,
-             Mode= BindingMode.TwoWay,
-            };
-            //this.ErrContent.SetBinding(TextBox.TextProperty,b);
+            this.MyCommandWindow.HeadText = "[Test]";
+            this.MyCommandWindow.ReadCommandtEvent += new OnMessageArrivalHandler(consoleTextBox1_ReadCommandtEvent);
+
         }
 
-        private void ErrContent_TextChanged(object sender, TextChangedEventArgs e)
+        private void consoleTextBox1_ReadCommandtEvent(object sender, ConsoleEditEventArgs e)
         {
-            Console.WriteLine(">>>");
-        }
-
-        private void Window_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
-        {
-            t.TestConteon = "4234534";
-        }
-    }
-    public class RangeValidationRule : ValidationRule
-    {
-        public override ValidationResult Validate(object value, CultureInfo cultureInfo)
-        {
-            double myValue = 0;
-            if (double.TryParse(value.ToString(), out myValue))
+            if (e.Message.ToLower() == "test")
             {
-                if (myValue >= 0 && myValue <= 100)
-                {
-                    return new ValidationResult(true, null);
-                }
+                this.MyCommandWindow.HeadText = "[TestMode]";
+                this.MyCommandWindow.Write("欢迎进入测试模式");
             }
-            return new ValidationResult(false, "Input should between 0 and 100");
+            else if (e.Message == "cls")
+            {
+                this.MyCommandWindow.Clear();
+                this.MyCommandWindow.Write("");
+            }
+            else
+            {
+                this.MyCommandWindow.Write("错误的输入");
+            }
         }
     }
 }

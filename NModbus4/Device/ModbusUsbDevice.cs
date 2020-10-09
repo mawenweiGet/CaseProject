@@ -19,13 +19,26 @@ namespace Modbus.Device
 	/// </summary>
 	public class HIDDeviceException : ApplicationException
 	{
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <param name="strMessage"></param>
 		public HIDDeviceException(string strMessage) : base(strMessage) { }
 
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <param name="strMessage"></param>
+		/// <returns></returns>
 		public static HIDDeviceException GenerateWithWinError(string strMessage)
 		{
 			return new HIDDeviceException(string.Format("Msg:{0} WinEr:{1:X8}", strMessage, Marshal.GetLastWin32Error()));
 		}
-
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <param name="strMessage"></param>
+		/// <returns></returns>
 		public static HIDDeviceException GenerateError(string strMessage)
 		{
 			return new HIDDeviceException(string.Format("Msg:{0}", strMessage));
@@ -97,9 +110,10 @@ namespace Modbus.Device
 		private IntPtr m_usbEventHandle;
 		private IntPtr m_formHandle;
 		#endregion
-
 		#region 初始化设备信息
-
+		/// <summary>
+		/// 
+		/// </summary>
 		public HIDDevice()
 		{
 			m_hHandle = IntPtr.Zero;
@@ -338,7 +352,7 @@ namespace Modbus.Device
 						//m_oFile.ReadTimeout = m_ReadTimeout;
 						//m_oFile.WriteTimeout = m_WriteTimeout;
 					}
-					catch (Exception ex)
+					catch (Exception)
 					{
 						throw HIDDeviceException.GenerateWithWinError("无法从hid获取详细数据");
 					}
@@ -486,7 +500,7 @@ namespace Modbus.Device
 		/// <summary>
 		/// 接收数据时要执行的任何操作的虚拟处理程序。重写以使用。
 		/// </summary>
-		/// <param name="data">收到的输入报告</param>
+		/// <param name="report"></param>
 		protected virtual void HandleDataReceived(HIDReport report)
 		{
 			//如果已分配，则激发事件处理程序
@@ -528,7 +542,7 @@ namespace Modbus.Device
 					BeginAsyncRead();   // 当所有这些都完成后，为下一个报告开始另一个阅读
 				}
 			}
-			catch (IOException ex)  // 如果我们遇到IO异常，设备就会被移除
+			catch (IOException)  // 如果我们遇到IO异常，设备就会被移除
 			{
 				//手动设备移动 
 				OnDeviceRemoved?.Invoke(this, new EventArgs());
@@ -537,7 +551,7 @@ namespace Modbus.Device
 
 				// 设备已被删除！
 			}
-			catch (Exception ex)
+			catch (Exception)
 			{
 				// 设备已被删除！
 			}
@@ -587,7 +601,14 @@ namespace Modbus.Device
 		/// </summary>
 		public static List<HIDInfoSet> GetInfoSets()
 		{
-			return GetInfoSets(null, null);
+			try
+			{
+				return GetInfoSets(null, null);
+			}
+			catch (Exception)
+			{
+				throw;
+			}
 		}
 
 		/// <summary>
@@ -595,7 +616,14 @@ namespace Modbus.Device
 		/// </summary>
 		public static List<HIDInfoSet> GetInfoSets(int VendorID)
 		{
-			return GetInfoSets(VendorID, null, null);
+			try
+			{
+				return GetInfoSets(VendorID, null, null);
+			}
+			catch (Exception)
+			{
+				throw;
+			}
 		}
 
 		/// <summary>
@@ -603,7 +631,14 @@ namespace Modbus.Device
 		/// </summary>
 		public static List<HIDInfoSet> GetInfoSets(int? VendorID, int? ProductID)
 		{
-			return GetInfoSets(VendorID, ProductID, null);
+			try
+			{
+				return GetInfoSets(VendorID, ProductID, null);
+			}
+			catch (Exception)
+			{
+				throw;
+			}
 		}
 
 		/// <summary>
@@ -692,11 +727,11 @@ namespace Modbus.Device
 			}
 			catch (Exception ex)
 			{
-				throw HIDDeviceException.GenerateError(ex.ToString());
+				throw HIDDeviceException.GenerateError(ex.ToString());				
 			}
 			finally
 			{
-				// 在开始之前，我们必须释放SetupDiGetClassDevs保留的InfoSet内存
+				// 在开始之前，必须释放SetupDiGetClassDevs保留的InfoSet内存
 				SetupDiDestroyDeviceInfoList(hInfoSet);
 			}
 
@@ -854,6 +889,9 @@ namespace Modbus.Device
 		#endregion
 	}
 	#region 辅助类
+	/// <summary>
+	/// 
+	/// </summary>
 	public class Win32Usb
 	{
 		#region 常量
@@ -904,17 +942,40 @@ namespace Modbus.Device
 		#endregion
 
 		#region hid.dll
-		//  Typedef enum defines a set of integer constants for HidP_Report_Type
+		/// <summary>
+		/// 
+		/// </summary>
 		public const Int16 HidP_Input = 0;
+		/// <summary>
+		/// /
+		/// </summary>
 		public const Int16 HidP_Output = 1;
+		/// <summary>
+		/// 
+		/// </summary>
 		public const Int16 HidP_Feature = 2;
 
-		[StructLayout(LayoutKind.Sequential)]
+		/// <summary>
+		/// 
+		/// </summary>
+		[StructLayout(LayoutKind.Sequential)]	
 		protected struct HIDD_ATTRIBUTES
 		{
+			/// <summary>
+			/// 
+			/// </summary>
 			public Int32 Size;
+			/// <summary>
+			/// 
+			/// </summary>
 			public UInt16 VendorID;
+			/// <summary>
+			/// 
+			/// </summary>
 			public UInt16 ProductID;
+			/// <summary>
+			/// 
+			/// </summary>
 			public UInt16 VersionNumber;
 		}
 
@@ -924,62 +985,210 @@ namespace Modbus.Device
 		[StructLayout(LayoutKind.Sequential, Pack = 1)]
 		protected struct HidP_Caps
 		{
+			/// <summary>
+			/// 
+			/// </summary>
 			public short Usage;
+			/// <summary>
+			/// 
+			/// </summary>
 			public short UsagePage;
+			/// <summary>
+			/// 
+			/// </summary>
 			public short InputReportByteLength;
+			/// <summary>
+			/// 
+			/// </summary>
 			public short OutputReportByteLength;
+			/// <summary>
+			/// 
+			/// </summary>
 			public short FeatureReportByteLength;
+			/// <summary>
+			/// 
+			/// </summary>
 			[MarshalAs(UnmanagedType.ByValArray, SizeConst = 17)]
 			public short[] Reserved;
+			/// <summary>
+			/// 
+			/// </summary>
 			public short NumberLinkCollectionNodes;
+			/// <summary>
+			/// 
+			/// </summary>
 			public short NumberInputButtonCaps;
+			/// <summary>
+			/// 
+			/// </summary>
 			public short NumberInputValueCaps;
+			/// <summary>
+			/// 
+			/// </summary>
 			public short NumberInputDataIndices;
+			/// <summary>
+			/// 
+			/// </summary>
 			public short NumberOutputButtonCaps;
+			/// <summary>
+			/// 
+			/// </summary>
 			public short NumberOutputValueCaps;
+			/// <summary>
+			/// 
+			/// </summary>
 			public short NumberOutputDataIndices;
+			/// <summary>
+			/// 
+			/// </summary>
 			public short NumberFeatureButtonCaps;
+			/// <summary>
+			/// 
+			/// </summary>
 			public short NumberFeatureValueCaps;
+			/// <summary>
+			/// 
+			/// </summary>
 			public short NumberFeatureDataIndices;
 		}
 
 		//  If IsRange is false, UsageMin is the Usage and UsageMax is unused.
 		//  If IsStringRange is false, StringMin is the String index and StringMax is unused.
 		//  If IsDesignatorRange is false, DesignatorMin is the designator index and DesignatorMax is unused.
+		/// <summary>
+		/// 
+		/// </summary>
 		[StructLayout(LayoutKind.Sequential)]
 		protected struct HidP_Value_Caps
 		{
+			/// <summary>
+			/// 
+			/// </summary>
 			public Int16 UsagePage;
+			/// <summary>
+			/// 
+			/// </summary>
 			public Byte ReportID;
+			/// <summary>
+			/// 
+			/// </summary>
 			public Int32 IsAlias;
+			/// <summary>
+			/// /
+			/// </summary>
 			public Int16 BitField;
+			/// <summary>
+			/// 
+			/// </summary>
 			public Int16 LinkCollection;
+			/// <summary>
+			/// 
+			/// </summary>
 			public Int16 LinkUsage;
+			/// <summary>
+			/// 
+			/// </summary>
 			public Int16 LinkUsagePage;
+			/// <summary>
+			/// 
+			/// </summary>
 			public Int32 IsRange;
+			/// <summary>
+			/// 
+			/// </summary>
 			public Int32 IsStringRange;
+			/// <summary>
+			/// 
+			/// 
+			/// </summary>
 			public Int32 IsDesignatorRange;
+			/// <summary>
+			/// 
+			/// </summary>
 			public Int32 IsAbsolute;
+			/// <summary>
+			/// 
+			/// </summary>
 			public Int32 HasNull;
+			/// <summary>
+			/// 
+			/// </summary>
 			public Byte Reserved;
+			/// <summary>
+			/// 
+			/// </summary>
 			public Int16 BitSize;
+			/// <summary>
+			/// 
+			/// </summary>
 			public Int16 ReportCount;
+			/// <summary>
+			/// 
+			/// </summary>
 			public Int16 Reserved2;
+			/// <summary>
+			/// 
+			/// </summary>
 			public Int16 Reserved3;
+			/// <summary>
+			/// 
+			/// </summary>
 			public Int16 Reserved4;
+			/// <summary>
+			/// 
+			/// </summary>
 			public Int16 Reserved5;
+			/// <summary>
+			/// 
+			/// </summary>
 			public Int16 Reserved6;
+			/// <summary>
+			/// 
+			/// </summary>
 			public Int32 LogicalMin;
+			/// <summary>
+			/// 
+			/// </summary>
 			public Int32 LogicalMax;
+			/// <summary>
+			/// 
+			/// </summary>
 			public Int32 PhysicalMin;
+			/// <summary>
+			/// 
+			/// </summary>
 			public Int32 PhysicalMax;
+			/// <summary>
+			/// 
+			/// </summary>
 			public Int16 UsageMin;
+			/// <summary>
+			/// 
+			/// </summary>
 			public Int16 UsageMax;
+			/// <summary>
+			/// 
+			/// </summary>
 			public Int16 StringMin;
+			/// <summary>
+			/// 
+			/// </summary>
 			public Int16 StringMax;
+			/// <summary>
+			/// 
+			/// </summary>
 			public Int16 DesignatorMin;
+			/// <summary>
+			/// 
+			/// </summary>
 			public Int16 DesignatorMax;
+			/// <summary>
+			/// 
+			/// </summary>
 			public Int16 DataIndexMin;
+			/// <summary>
+			/// 
+			/// </summary>
 			public Int16 DataIndexMax;
 		}
 
@@ -1024,42 +1233,116 @@ namespace Modbus.Device
 		[DllImport("hid.dll", SetLastError = true)]
 		protected static extern int HidP_GetCaps(IntPtr lpData, out HidP_Caps oCaps);
 
-
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <param name="ReportType"></param>
+		/// <param name="ValueCaps"></param>
+		/// <param name="ValueCapsLength"></param>
+		/// <param name="PreparsedData"></param>
+		/// <returns></returns>
 		[DllImport("hid.dll", SetLastError = true)]
 		protected static extern int HidP_GetValueCaps(Int16 ReportType, ref Byte ValueCaps, ref Int16 ValueCapsLength, IntPtr PreparsedData);
 
 
 		// http://msdn.microsoft.com/en-us/library/windows/hardware/ff538959%28v=vs.85%29.aspx
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <param name="hFile"></param>
+		/// <param name="buffer"></param>
+		/// <param name="bufferLength"></param>
+		/// <returns></returns>
 		[DllImport("hid.dll", CharSet = CharSet.Auto, SetLastError = true)]
 		protected static extern bool HidD_GetManufacturerString(IntPtr hFile, StringBuilder buffer, Int32 bufferLength);
 
 		// http://msdn.microsoft.com/en-us/library/windows/hardware/ff539681%28v=vs.85%29.aspx
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <param name="hFile"></param>
+		/// <param name="buffer"></param>
+		/// <param name="bufferLength"></param>
+		/// <returns></returns>
 		[DllImport("hid.dll", CharSet = CharSet.Auto, SetLastError = true)]
 		protected static extern bool HidD_GetProductString(IntPtr hFile, StringBuilder buffer, Int32 bufferLength);
 
 		// http://msdn.microsoft.com/en-us/library/windows/hardware/ff539683%28v=vs.85%29.aspx
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <param name="hFile"></param>
+		/// <param name="buffer"></param>
+		/// <param name="bufferLength"></param>
+		/// <returns></returns>
 		[DllImport("hid.dll", CharSet = CharSet.Auto, SetLastError = true)]
 		protected static extern bool HidD_GetSerialNumberString(IntPtr hFile, StringBuilder buffer, Int32 bufferLength);
 
 		// http://msdn.microsoft.com/en-us/library/windows/hardware/ff538900%28v=vs.85%29.aspx
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <param name="hFile"></param>
+		/// <param name="Attributes"></param>
+		/// <returns></returns>
 		[DllImport("hid.dll", SetLastError = true)]
 		protected static extern bool HidD_GetAttributes(IntPtr hFile, ref HIDD_ATTRIBUTES Attributes);
 
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <param name="hFile"></param>
+		/// <param name="lpReportBuffer"></param>
+		/// <param name="ReportBufferLength"></param>
+		/// <returns></returns>
 		[DllImport("hid.dll", SetLastError = true)]
 		protected static extern bool HidD_GetFeature(IntPtr hFile, ref Byte lpReportBuffer, Int32 ReportBufferLength);
 
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <param name="hFile"></param>
+		/// <param name="lpReportBuffer"></param>
+		/// <param name="ReportBufferLength"></param>
+		/// <returns></returns>
 		[DllImport("hid.dll", SetLastError = true)]
 		protected static extern bool HidD_GetInputReport(IntPtr hFile, ref Byte lpReportBuffer, Int32 ReportBufferLength);
 
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <param name="hFile"></param>
+		/// <param name="NumberBuffers"></param>
+		/// <returns></returns>
 		[DllImport("hid.dll", SetLastError = true)]
 		protected static extern bool HidD_GetNumInputBuffers(IntPtr hFile, ref Int32 NumberBuffers);
 
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <param name="hFile"></param>
+		/// <param name="lpReportBuffer"></param>
+		/// <param name="ReportBufferLength"></param>
+		/// <returns></returns>
 		[DllImport("hid.dll", SetLastError = true)]
 		protected static extern bool HidD_SetFeature(IntPtr hFile, ref Byte lpReportBuffer, Int32 ReportBufferLength);
 
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <param name="hFile"></param>
+		/// <param name="NumberBuffers"></param>
+		/// <returns></returns>
 		[DllImport("hid.dll", SetLastError = true)]
 		protected static extern bool HidD_SetNumInputBuffers(IntPtr hFile, Int32 NumberBuffers);
 
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <param name="hFile"></param>
+		/// <param name="lpReportBuffer"></param>
+		/// <param name="ReportBufferLength"></param>
+		/// <returns></returns>
 		[DllImport("hid.dll", SetLastError = true)]
 		protected static extern bool HidD_SetOutputReport(IntPtr hFile, ref Byte lpReportBuffer, Int32 ReportBufferLength);
 		#endregion
@@ -1072,9 +1355,21 @@ namespace Modbus.Device
 		[StructLayout(LayoutKind.Sequential, Pack = 1)]
 		protected struct DeviceInterfaceData
 		{
+			/// <summary>
+			/// 
+			/// </summary>
 			public int Size;
+			/// <summary>
+			/// 
+			/// </summary>
 			public Guid InterfaceClassGuid;
+			/// <summary>
+			/// 
+			/// </summary>
 			public int Flags;
+			/// <summary>
+			/// 
+			/// </summary>
 			public int Reserved;
 		}
 
@@ -1084,7 +1379,13 @@ namespace Modbus.Device
 		[StructLayout(LayoutKind.Sequential, Pack = 1)]
 		public struct DeviceInterfaceDetailData
 		{
+			/// <summary>
+			/// 
+			/// </summary>
 			public int Size;
+			/// <summary>
+			/// 
+			/// </summary>
 			[MarshalAs(UnmanagedType.ByValTStr, SizeConst = 256)]
 			public string DevicePath;
 		}
@@ -1162,10 +1463,25 @@ namespace Modbus.Device
 		[StructLayout(LayoutKind.Sequential, Pack = 1)]
 		protected struct Overlapped
 		{
+			/// <summary>
+			/// 
+			/// </summary>
 			public uint Internal;
+			/// <summary>
+			/// 
+			/// </summary>
 			public uint InternalHigh;
+			/// <summary>
+			/// 
+			/// </summary>
 			public uint Offset;
+			/// <summary>
+			/// 
+			/// </summary>
 			public uint OffsetHigh;
+			/// <summary>
+			/// 
+			/// </summary>
 			public IntPtr Event;
 		}
 
@@ -1199,10 +1515,25 @@ namespace Modbus.Device
 		[StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = 1)]
 		public class DeviceBroadcastInterface
 		{
+			/// <summary>
+			/// 
+			/// </summary>
 			public int Size;
+			/// <summary>
+			/// 
+			/// </summary>
 			public int DeviceType;
+			/// <summary>
+			/// 
+			/// </summary>
 			public int Reserved;
+			/// <summary>
+			/// 
+			/// </summary>
 			public Guid ClassGuid;
+			/// <summary>
+			/// 
+			/// </summary>
 			[MarshalAs(UnmanagedType.ByValTStr, SizeConst = 256)]
 			public string Name;
 		}
@@ -1342,7 +1673,10 @@ namespace Modbus.Device
 			InBytesLength = inBytesLength;
 			OutBytesLength = outBytesLength;
 		}
-
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <returns></returns>
 		public string VersionInBCD()
 		{
 			if (((byte)(Version >> 24)) == 0)
@@ -1352,15 +1686,27 @@ namespace Modbus.Device
 
 			return String.Format("{0}{1}.{2}{3}", (byte)(Version >> 24), (byte)(Version >> 16), (byte)(Version >> 8), (byte)Version);
 		}
-
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <returns></returns>
 		public string GetInfo()
 		{
 			return String.Format("[{0:X4}/{1:X4}] {2} {3}", VendorID, ProductID, ManufacturerString, ProductString);
 		}
 	}
+	/// <summary>
+	/// 
+	/// </summary>
 	public class HIDReport : EventArgs
 	{
+		/// <summary>
+		/// 
+		/// </summary>
 		public readonly byte ID;
+		/// <summary>
+		/// 
+		/// </summary>
 		public readonly byte[] Data;
 
 		/// <summary>
@@ -1382,6 +1728,9 @@ namespace Modbus.Device
 			Array.Copy(rawData, 1, Data, 0, Data.Length);
 		}
 
+		/// <summary>
+		/// 
+		/// </summary>
 		public int Length
 		{
 			get { return Data.Length + 1; }
@@ -1405,7 +1754,17 @@ namespace Modbus.Device
 			return buffer;
 		}
 	}
+	/// <summary>
+	/// 
+	/// </summary>
+	/// <param name="sender"></param>
+	/// <param name="args"></param>
 	public delegate void DataRecievedEventHandler(object sender, HIDReport args);
+	/// <summary>
+	/// 
+	/// </summary>
+	/// <param name="sender"></param>
+	/// <param name="args"></param>
 	public delegate void DataSendEventHandler(object sender, HIDReport args);
 	#endregion
 }

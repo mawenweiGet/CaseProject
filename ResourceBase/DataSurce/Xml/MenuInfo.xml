@@ -9,6 +9,7 @@
     <MenuItem Icon="&#xedf9;" Name="BackgroundWorker" HeaderText="后台线程" MenuId="12" ParentMenuId="1" FormName="FunctionLibrary.dll" MenuName="FunctionLibrary.ThreadTest.BackgroundWorkerStudy.Test1" OpenType="1"></MenuItem>
     <MenuItem Icon="&#xede4;" Name="ArrowLine" HeaderText="箭头画线" MenuId="13" ParentMenuId="1" FormName="FunctionLibrary.dll" MenuName="FunctionLibrary.ArrowLine.ArrowLine1" OpenType="1"></MenuItem>
     <MenuItem Icon="&#xede4;" Name="DependencyProperty" HeaderText="依赖属性" MenuId="14" ParentMenuId="1" FormName="FunctionLibrary.dll" MenuName="FunctionLibrary.WPF_Promotion.DependencyPropertyStudy.MyLableMain" OpenType="1"></MenuItem>
+    <MenuItem Icon="&#xede4;" Name="Modbuscomm" HeaderText="Modbus通讯" MenuId="15" ParentMenuId="1" FormName="FunctionLibrary.dll" MenuName="FunctionLibrary.ModbusCommStudy.ToolBar_Project" OpenType="1"></MenuItem>
 
   </MenuItem>
   <MenuItem Icon="&#xee1b;" Name="UserControl" HeaderText="用户控件" MenuId="2" ParentMenuId="0">

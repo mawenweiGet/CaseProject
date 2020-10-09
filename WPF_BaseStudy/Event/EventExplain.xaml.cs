@@ -37,8 +37,7 @@ namespace WPF_BaseStudy.Event
             //关联绑定 
             cat.CatCall += new CatCallEventHandler(GetMouseRun);
             cat.CatCall += new CatCallEventHandler(GetWakeUp);
-            this.TB_Content.Text+=cat.OnCatCall() + "\n\r"; 
-
+            cat.OnCatCall(); 
         }
         public string GetMouseRun()
         {

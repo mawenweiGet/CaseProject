@@ -78,6 +78,14 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Page Include="Language\Font-en-US.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Language\Font-zh-CN.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="StyleResources\Combox\ComboxStyle.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -94,8 +102,27 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="StyleResources\ZhenZhustyle\ButtonTheme.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="StyleResources\ZhenZhustyle\Color.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="StyleResources\ZhenZhustyle\ComboBoxTheme.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="StyleResources\ZhenZhustyle\TextBlockTheme.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="ImageResources\ProjectUsing\BinDing\ValueConverter3.png" />
+    <Resource Include="ImageResources\ProjectUsing\BinDing\ValueConverter2.png" />
+    <Resource Include="ImageResources\ProjectUsing\BinDing\ValueConverter1.png" />
     <Resource Include="ImageResources\ProjectUsing\Event\EventExplen1.png" />
     <Resource Include="ImageResources\ProjectUsing\BinDing\BinDingExplent5.png" />
     <Resource Include="ImageResources\ProjectUsing\BinDing\BinDingExplent4.png" />

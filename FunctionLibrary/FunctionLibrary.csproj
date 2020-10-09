@@ -55,12 +55,20 @@
     <Compile Include="BindingStudy\MultiBinding1.xaml.cs">
       <DependentUpon>MultiBinding1.xaml</DependentUpon>
     </Compile>
+    <Compile Include="CommandWindows\CommandWondows1.cs" />
+    <Compile Include="CommandWindows\CommandWondows1.xaml.cs">
+      <DependentUpon>CommandWondows1.xaml</DependentUpon>
+    </Compile>
     <Compile Include="LoadConfigMenu\DataHandle\SaveXmlData.cs" />
     <Compile Include="LoadConfigMenu\Model\MenuData.cs" />
     <Compile Include="LoadConfigMenu\Model\MenuInfo.cs" />
     <Compile Include="LoadConfigMenu\Model\MenuItemInfo.cs" />
     <Compile Include="Magnifier\Magnifier1.xaml.cs">
       <DependentUpon>Magnifier1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ModbusCommStudy\MB_UsbHid_Operate.cs" />
+    <Compile Include="ModbusCommStudy\ToolBar_Project.xaml.cs">
+      <DependentUpon>ToolBar_Project.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
@@ -103,7 +111,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="CommandWindows\CommandWondows1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Magnifier\Magnifier1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ModbusCommStudy\ToolBar_Project.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -124,6 +140,10 @@
     <ProjectReference Include="..\LocalTool\LocalTool.csproj">
       <Project>{13c2b01d-edb7-4fa0-8b84-9d10148610d4}</Project>
       <Name>LocalTool</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NModbus4\NModbus4.csproj">
+      <Project>{ff96b252-2b24-44a1-a09c-6401b5d7ed23}</Project>
+      <Name>NModbus4</Name>
     </ProjectReference>
     <ProjectReference Include="..\ResourceBase\ResourceBase.csproj">
       <Project>{8bf815eb-e746-47ce-a2de-45f38a6441fe}</Project>
