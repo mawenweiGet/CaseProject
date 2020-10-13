@@ -55,10 +55,13 @@
     <Compile Include="BindingStudy\MultiBinding1.xaml.cs">
       <DependentUpon>MultiBinding1.xaml</DependentUpon>
     </Compile>
-    <Compile Include="CommandWindows\CommandWondows1.cs" />
     <Compile Include="CommandWindows\CommandWondows1.xaml.cs">
       <DependentUpon>CommandWondows1.xaml</DependentUpon>
     </Compile>
+    <Compile Include="CommandWindows\MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CommandWindows\OnMessageArrivalHandler.cs" />
     <Compile Include="LoadConfigMenu\DataHandle\SaveXmlData.cs" />
     <Compile Include="LoadConfigMenu\Model\MenuData.cs" />
     <Compile Include="LoadConfigMenu\Model\MenuInfo.cs" />
@@ -112,6 +115,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="CommandWindows\CommandWondows1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CommandWindows\MainWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

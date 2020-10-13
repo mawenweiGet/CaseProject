@@ -54,10 +54,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="CommandWondows1.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="CommandWondows2.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -69,10 +65,6 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="CommandWondows1.cs" />
-    <Compile Include="CommandWondows1.xaml.cs">
-      <DependentUpon>CommandWondows1.xaml</DependentUpon>
     </Compile>
     <Compile Include="CommandWondows2.xaml.cs">
       <DependentUpon>CommandWondows2.xaml</DependentUpon>
@@ -110,6 +102,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\NModbus4\NModbus4.csproj">
+      <Project>{ff96b252-2b24-44a1-a09c-6401b5d7ed23}</Project>
+      <Name>NModbus4</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ResourceBase\ResourceBase.csproj">
       <Project>{8bf815eb-e746-47ce-a2de-45f38a6441fe}</Project>
       <Name>ResourceBase</Name>

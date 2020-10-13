@@ -10,40 +10,47 @@
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type ListBoxItem}">
-                        <Grid Height="50" x:Name="grid">
+                        <Grid MinHeight="50" x:Name="grid">
                             <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="2"/>
                                 <ColumnDefinition Width="3*"/>
                                 <ColumnDefinition Width="7*"/>
                             </Grid.ColumnDefinitions>
-                            <TextBlock Grid.Column="0" 
-                                       x:Name="iconCode"
-                                       Text="{Binding IconCode}"     
-                                       Margin="2"
-                                       FontSize="23" Foreground="White" 
-                                       FontFamily="{Binding m_IconPath}"
-                                       VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                            <Border Name="c_StatusColorEffect" Grid.Column="0"  VerticalAlignment="Top"
+                            Height="{Binding ElementName=grid, Path=ActualHeight}"/>
                             <TextBlock Grid.Column="1" 
+                                       x:Name="iconCode"
+                                       Text="{Binding IconCode}"                                   
+                                       FontSize="15" 
+                                       Foreground="#898989"
+                                       FontFamily="pack://application:,,,/ResourceBase;component/Font/#icomoon"
+                                       VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                            <TextBlock Grid.Column="2" 
                                        x:Name="info"
-                                       FontSize="12"
-                                       FontFamily="Courier New"
+                                       Foreground="#898989"
+                                       FontSize="15"
+                                       FontFamily="Source Han Sans CN"
+                                       FontWeight="Black"
                                        MaxWidth="150"  
                                        TextWrapping="Wrap"
-                                       HorizontalAlignment="Center"
                                        VerticalAlignment="Center" 
                                        Text="{Binding Info}" 
-                                       Foreground="#808080"/>
+                                       />
                         </Grid>
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsMouseOver" Value="true">
-                                <Setter TargetName="grid" Property="Background" Value="#FAFAFA"/>
-                                <Setter TargetName="iconCode" Property="Foreground" Value="#05051D"/>
+                                <Setter TargetName="grid" Property="Background" Value="#F5F5F5"/>
+                                <Setter TargetName="c_StatusColorEffect" Property="Background" Value="#0140A2"/>
                             </Trigger>
                             <Trigger Property="IsMouseOver" Value="False">
-                                <Setter TargetName="iconCode" Property="Foreground" Value="#05051D"/>
+                                <Setter TargetName="grid" Property="Background" Value="#F8F9FA"/>
+                                <Setter TargetName="c_StatusColorEffect" Property="Background" Value="Transparent"/>
                             </Trigger>
                             <Trigger Property="Selector.IsSelected" Value="true">
-                                <Setter TargetName="info" Property="Foreground" Value="#2020CE"/>
-                                <Setter TargetName="iconCode" Property="Foreground" Value="#2020CE"/>
+                                <Setter TargetName="info" Property="Foreground" Value="#004098"/>
+                                <Setter TargetName="iconCode" Property="Foreground" Value="#004098"/>
+                                <Setter TargetName="grid" Property="Background" Value="#F5F5F5"/>
+                                <Setter TargetName="c_StatusColorEffect" Property="Background" Value="#0140A2"/>
                             </Trigger>
                         </ControlTemplate.Triggers>
                     </ControlTemplate>
@@ -51,13 +58,14 @@
             </Setter>
         </Style>
     </UserControl.Resources>
-    <Grid>
-        <ListBox VerticalAlignment="Top" 
+
+    <ListBox VerticalAlignment="Top" 
                  x:Name="UserInfoList"
-                 BorderThickness="1" 
+                 Padding="0"
+                 BorderThickness="0" 
+                 BorderBrush="Red"
                  ItemContainerStyle="{StaticResource UserInfoStyle}"  
-                 BorderBrush="#eaeaeb"
-                 >
-        </ListBox>
-    </Grid>
+                >
+
+    </ListBox>
 </UserControl>

@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,21 +13,19 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace TestProject
+namespace FunctionLibrary.CommandWindows
 {
     /// <summary>
     /// MainWindow.xaml 的交互逻辑
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainWindow : UserControl
     {
         public MainWindow()
         {
             InitializeComponent();
-            //this.MyCommandWindow.HeadText = "[command]";
             this.MyCommandWindow.ReadCommandtEvent += new OnMessageArrivalHandler(consoleTextBox1_ReadCommandtEvent);
             this.MyCommandWindow.Clear();
         }
-
         private void consoleTextBox1_ReadCommandtEvent(object sender, ConsoleEditEventArgs e)
         {
             if (e.Message.ToLower() == "cls")
