@@ -1,0 +1,11 @@
+﻿<UserControl x:Class="TemplateLibrary.Border.BorderTemplate1"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:TemplateLibrary.Border"
+             mc:Ignorable="d">
+    <Border VerticalAlignment="Center" HorizontalAlignment="Center" CornerRadius="20" BorderThickness="3" Background="#EE7600" BorderBrush="Transparent">
+        <Label x:Name="m_labelobj" Content="错误提示框" Foreground="#FFFFFF" FontSize="24" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+    </Border>
+</UserControl>

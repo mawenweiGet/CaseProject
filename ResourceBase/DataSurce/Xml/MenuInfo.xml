@@ -30,13 +30,13 @@
       <MenuItem Name="Slider1" HeaderText="滑动条1" MenuId="316" ParentMenuId="31" FormName="TemplateLibrary.dll" MenuName="TemplateLibrary.Slider.Slider1" OpenType="1"></MenuItem>      
       <MenuItem Name="Slider2" HeaderText="滑动条2" MenuId="317" ParentMenuId="31" FormName="TemplateLibrary.dll" MenuName="TemplateLibrary.Slider.Slider2" OpenType="1"></MenuItem>
       <MenuItem Name="TextBox1" HeaderText="输入文本1" MenuId="318" ParentMenuId="31" FormName="TemplateLibrary.dll" MenuName="TemplateLibrary.TextBok.TextBokTemplate1" OpenType="1"></MenuItem>
+      <MenuItem Name="Border1" HeaderText="边框样式1" MenuId="319" ParentMenuId="31" FormName="TemplateLibrary.dll" MenuName="TemplateLibrary.Border.BorderTemplate1" OpenType="1"></MenuItem>
     </MenuItem>
     <MenuItem Name="BaseControlTemplate" HeaderText="晋级控件模版" MenuId="32" ParentMenuId="3">
       <MenuItem Name="Input_Information" HeaderText="数据填充" MenuId="321" ParentMenuId="32" FormName="TemplateLibrary.dll" MenuName="TemplateLibrary.BaseControlPromotionTemplate.Input_Information.InputInformation1" OpenType="1"></MenuItem>      
       <MenuItem Name="ComboBoxChoice" HeaderText="数据选择" MenuId="322" ParentMenuId="32" FormName="TemplateLibrary.dll" MenuName="TemplateLibrary.BaseControlPromotionTemplate.ComboBoxChoice.ComboBox1" OpenType="1"></MenuItem>      
       <MenuItem Name="SwitchChoice" HeaderText="开关选择" MenuId="323" ParentMenuId="32" FormName="TemplateLibrary.dll" MenuName="TemplateLibrary.BaseControlPromotionTemplate.SwitchChoice.SwitchChoice1" OpenType="1"></MenuItem>      
-      <MenuItem Name="DateTimeControl" HeaderText="时间控件" MenuId="324" ParentMenuId="32" FormName="TemplateLibrary.dll" MenuName="TemplateLibrary.BaseControlPromotionTemplate.TimeControl.TimeControl1" OpenType="1"></MenuItem>      
-    
+      <MenuItem Name="DateTimeControl" HeaderText="时间控件" MenuId="324" ParentMenuId="32" FormName="TemplateLibrary.dll" MenuName="TemplateLibrary.BaseControlPromotionTemplate.TimeControl.TimeControl1" OpenType="1"></MenuItem>          
     </MenuItem>
   </MenuItem>
   <MenuItem Icon="&#xf0e3;" Name="Basic" HeaderText="基础运用" MenuId="4" parentMenuId="0">
