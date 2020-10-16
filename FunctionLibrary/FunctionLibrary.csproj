@@ -62,6 +62,9 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="CommandWindows\OnMessageArrivalHandler.cs" />
+    <Compile Include="FileOperation\Json\JsonFileOperation1.xaml.cs">
+      <DependentUpon>JsonFileOperation1.xaml</DependentUpon>
+    </Compile>
     <Compile Include="LoadConfigMenu\DataHandle\SaveXmlData.cs" />
     <Compile Include="LoadConfigMenu\Model\MenuData.cs" />
     <Compile Include="LoadConfigMenu\Model\MenuInfo.cs" />
@@ -119,6 +122,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="CommandWindows\MainWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FileOperation\Json\JsonFileOperation1.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

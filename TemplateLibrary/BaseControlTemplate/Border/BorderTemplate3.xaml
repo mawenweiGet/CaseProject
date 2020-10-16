@@ -1,0 +1,24 @@
+﻿<UserControl x:Class="TemplateLibrary.Border.BorderTemplate3"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:TemplateLibrary.Border"
+             mc:Ignorable="d">
+    
+    <Border VerticalAlignment="Center" HorizontalAlignment="Center" CornerRadius="5" BorderThickness="3" >
+        <Border.BorderBrush>
+            <LinearGradientBrush SpreadMethod="Repeat" StartPoint="0, 2" EndPoint="1, 0" MappingMode="RelativeToBoundingBox">
+                <LinearGradientBrush.GradientStops>
+                    <GradientStop Color="red" Offset="0"/>
+                    <GradientStop Color="Orange" Offset="0.2"/>
+                    <GradientStop Color="Yellow" Offset="0.4"/>
+                    <GradientStop Color="Green" Offset="0.6"/>
+                    <GradientStop Color="Cyan" Offset="0.8"/>
+                    <GradientStop Color="Blue" Offset="1"/>
+                </LinearGradientBrush.GradientStops>
+            </LinearGradientBrush>
+        </Border.BorderBrush>
+        <Label x:Name="Lable_obj" Content="哈哈哈我会画框了" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+    </Border>
+</UserControl>

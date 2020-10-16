@@ -54,6 +54,9 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AnimationStyle\AnimationTemplate1.xaml.cs">
+      <DependentUpon>AnimationTemplate1.xaml</DependentUpon>
+    </Compile>
     <Compile Include="BaseControlPromotionTemplate\ComboBoxChoice\ComboBox1.xaml.cs">
       <DependentUpon>ComboBox1.xaml</DependentUpon>
     </Compile>
@@ -87,8 +90,20 @@
     <Compile Include="BaseControlTemplate\ProgressBar\ProgressBar1.xaml.cs">
       <DependentUpon>ProgressBar1.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Border\BorderTemplate1.xaml.cs">
+    <Compile Include="BaseControlTemplate\Border\BorderTemplate1.xaml.cs">
       <DependentUpon>BorderTemplate1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BaseControlTemplate\Border\BorderTemplate2.xaml.cs">
+      <DependentUpon>BorderTemplate2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BaseControlTemplate\Border\BorderTemplate3.xaml.cs">
+      <DependentUpon>BorderTemplate3.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BaseControlTemplate\Border\BorderTemplate4.xaml.cs">
+      <DependentUpon>BorderTemplate4.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BaseControlTemplate\Border\MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
@@ -122,6 +137,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Page Include="AnimationStyle\AnimationTemplate1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="BaseControlPromotionTemplate\ComboBoxChoice\ComboBox1.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -178,7 +197,23 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Border\BorderTemplate1.xaml">
+    <Page Include="BaseControlTemplate\Border\BorderTemplate1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="BaseControlTemplate\Border\BorderTemplate2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="BaseControlTemplate\Border\BorderTemplate3.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="BaseControlTemplate\Border\BorderTemplate4.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="BaseControlTemplate\Border\MainWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

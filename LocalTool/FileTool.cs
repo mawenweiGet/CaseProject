@@ -53,7 +53,7 @@ namespace LocalTool
         /// <summary>
         /// 读文件，生成string
         /// </summary>
-        /// <param name="filepath">文件路径</param>
+        /// <param name="filepath">文件路径(默认当前程序路径下)</param>
         /// <param name="str">字符串</param>
         /// <returns></returns>
         public static int ReadFile(string filepath, ref string str)
@@ -78,6 +78,33 @@ namespace LocalTool
         #endregion
 
         #region 文件写入
+        /// <summary>
+        /// 写文件，写入string
+        /// </summary>
+        /// <param name="filepath">文件路径(默认当前程序路径下)</param>
+        /// <param name="str">字符串</param>
+        /// <returns></returns>
+        public static int WriteFile(string filepath, string str)
+        {
+            StreamWriter file = null;
+            try
+            {
+                file = new StreamWriter(filepath, false);
+                file.Write(str);
+                file.Close();
+                file.Dispose();
+            }
+            catch (Exception)
+            {
+                if (file != null)
+                {
+                    file.Close();
+                    file.Dispose();
+                }
+                return -1;
+            }
+            return 1;
+        }
         /// <summary>写文件，写入byte数组</summary>
         /// <param name="filepath">文件路径</param>
         /// <param name="bytes">数据字节</param>

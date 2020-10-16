@@ -7,6 +7,5 @@
         mc:Ignorable="d"
         Title="USBCommand" Height="450" Width="800">
 
-    <p:CommandWondows2 x:Name="MyCommandWindow"/>
 
 </Window>
