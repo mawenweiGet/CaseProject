@@ -6,6 +6,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 using System.Xml;
+using static ProjectFrame.App;
 
 namespace ProjectFrame
 {
@@ -19,9 +20,7 @@ namespace ProjectFrame
         public MainWindow()
         {
             InitializeComponent();
-
             BindMenu(0,null);
-
         }
         private void BindMenu(int parentId, MenuItem item)
         {

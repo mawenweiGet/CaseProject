@@ -9,11 +9,12 @@
         <!-- ComboBoxItem样式 -->
         <Style x:Key="ComboBoxItemStyle" TargetType="ComboBoxItem">
             <Setter Property="VerticalContentAlignment" Value="Center"/>
-            <Setter Property="Height" Value="40"/>
+            <Setter Property="Height" Value="28"/>
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="ComboBoxItem">
-                        <Border Name="Back" Background="Transparent" BorderThickness="0" BorderBrush="#FF6A6A6A" >
+                        <Border Name="Back" Background="Transparent" BorderThickness="0" BorderBrush="#FF6A6A6A" 
+                                Margin="0 1 0 0" MouseMove="Back_MouseMove" MouseLeave="Back_MouseLeave">
                             <ContentPresenter ContentSource="{Binding Source}" Margin="{TemplateBinding Padding}" HorizontalAlignment="Left" VerticalAlignment="Center"></ContentPresenter>
                         </Border>
                         <ControlTemplate.Triggers>

@@ -102,6 +102,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="StyleResources\SystemResour\Fonts\Font-en-US.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="StyleResources\SystemResour\Fonts\Font-zh-CN.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="StyleResources\ZhenZhustyle\ButtonTheme.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -120,6 +128,7 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="ImageResources\ProjectUsing\Animation\Dynamic_Arrow.gif" />
     <Resource Include="ImageResources\ProjectUsing\BinDing\ValueConverter3.png" />
     <Resource Include="ImageResources\ProjectUsing\BinDing\ValueConverter2.png" />
     <Resource Include="ImageResources\ProjectUsing\BinDing\ValueConverter1.png" />

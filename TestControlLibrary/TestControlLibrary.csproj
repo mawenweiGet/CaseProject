@@ -48,6 +48,11 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CascadeRelationChose\CascadeRelationDataResource.cs" />
+    <Compile Include="CascadeRelationChose\DataApp.cs" />
+    <Compile Include="CascadeRelationChose\MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="DataAdjustment\RangeAdjustment\RangeAdjustment1.xaml.cs">
       <DependentUpon>RangeAdjustment1.xaml</DependentUpon>
     </Compile>
@@ -80,6 +85,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Page Include="CascadeRelationChose\MainWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="DataAdjustment\RangeAdjustment\RangeAdjustment1.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -94,6 +103,10 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\LocalTool\LocalTool.csproj">
+      <Project>{13c2b01d-edb7-4fa0-8b84-9d10148610d4}</Project>
+      <Name>LocalTool</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ResourceBase\ResourceBase.csproj">
       <Project>{8bf815eb-e746-47ce-a2de-45f38a6441fe}</Project>
       <Name>ResourceBase</Name>

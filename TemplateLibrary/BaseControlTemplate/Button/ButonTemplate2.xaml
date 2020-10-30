@@ -1,0 +1,71 @@
+﻿<UserControl x:Class="TemplateLibrary.BaseControlTemplate.Button.ButonTemplate2"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:TemplateLibrary.BaseControlTemplate.Button"
+             mc:Ignorable="d">
+    <UserControl.Resources>
+        <!--居中文本框-->
+        <Style x:Key="CenterTextBlock"  TargetType="TextBlock">
+            <Setter Property="TextAlignment" Value="Center"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="FontSize" Value="12"/>
+        </Style>
+        <!--CZFontAwesome文本框-->
+        <Style x:Key="CZFontAwesome"  TargetType="TextBlock" 
+           BasedOn="{StaticResource CenterTextBlock}">
+            <Setter Property="FontFamily" Value="pack://application:,,,/ResourceBase;component/Font/#icomoon"/>
+            <Setter Property="FontSize" Value="24"/>
+        </Style>
+        <SolidColorBrush x:Key="CZYellow" Color="Yellow"/>
+        <SolidColorBrush x:Key="CZDisabledColor" Color="Gray"/>
+        <SolidColorBrush x:Key="CZWhite" Color="White"/>
+
+        <ControlTemplate x:Key="MonitorButton_Temlate" TargetType="{x:Type Button}">
+            <Border Name="Border" CornerRadius="6" Background="Transparent" 
+                >
+                <WrapPanel VerticalAlignment="Center" HorizontalAlignment="Stretch">
+                    <TextBlock Name="IcoText"
+                           TextAlignment="Center"
+                           HorizontalAlignment="Center"
+                           Text="{TemplateBinding Content}"
+                           Style="{StaticResource CZFontAwesome}"
+                           Margin="5,0,5,0">
+                    </TextBlock>
+                    <TextBlock Name="Text" 
+                           Style="{StaticResource CenterTextBlock}"
+                           HorizontalAlignment="Center"
+                           TextAlignment="Center"
+                           Text="{TemplateBinding Tag}">
+                    </TextBlock>
+                </WrapPanel>
+            </Border>
+            <ControlTemplate.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Cursor" Value="Hand"/>
+                    <Setter TargetName="IcoText" Property="Foreground" 
+                        Value="{StaticResource CZYellow}"/>
+                    <Setter TargetName="Text" Property="Foreground" 
+                        Value="{StaticResource CZYellow}"/>
+                </Trigger>
+                <Trigger Property="IsEnabled" Value="False">
+                    <Setter TargetName="IcoText" Property="Foreground" 
+                        Value="{StaticResource CZDisabledColor}"/>
+                    <Setter TargetName="Text" Property="Foreground" 
+                        Value="{StaticResource CZDisabledColor}"/>
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+    </UserControl.Resources>
+    <Button Width="auto"
+            VerticalAlignment="Center" 
+            Template="{StaticResource MonitorButton_Temlate}"
+            Foreground="Red"
+            Content="&#xedde;" x:Name="btn_StartMonitor"
+            ToolTip="监控"
+            Margin="0,0,0,0"
+            Tag="开始监控"
+            Click="Btn_StartMonitor_Click" HorizontalAlignment="Center"/>
+</UserControl>

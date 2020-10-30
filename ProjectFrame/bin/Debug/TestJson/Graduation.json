@@ -1,0 +1,635 @@
+{
+  "listTransducers": [
+    {
+      "typeCode": 0,
+      "strTransducerType": "RTD Element",
+      "listSubType": [
+        {
+          "typeCode": 0,
+          "strSubType": "Pt100 IEC-751",
+          "bIfLimitCheck": true,
+          "pvLowerLimit": -200.0,
+          "pvUpperLimit": 850.0,
+          "rangeMin": 20,
+          "bIfShow_TypeCJC": false,
+          "bIfShow_NumOfWires": true,
+          "bIfShow_CustomTable": false,
+          "pvOffsetMin": 50,
+          "listUnit": [
+            {
+              "strUnit": "℃",
+              "typeCode": 32
+            },
+            {
+              "strUnit": "℉",
+              "typeCode": 33
+            },
+            {
+              "strUnit": "K",
+              "typeCode": 34
+            },
+            {
+              "strUnit": "R",
+              "typeCode": 35
+            }
+          ]
+        },
+        {
+          "typeCode": 1,
+          "strSubType": "CU50 IEC-751",
+          "bIfLimitCheck": true,
+          "pvLowerLimit": -50.0,
+          "pvUpperLimit": 150.0,
+          "rangeMin": 20,
+          "bIfShow_TypeCJC": false,
+          "bIfShow_NumOfWires": true,
+          "bIfShow_CustomTable": false,
+          "pvOffsetMin": 50,
+          "listUnit": [
+            {
+              "strUnit": "℃",
+              "typeCode": 32
+            },
+            {
+              "strUnit": "℉",
+              "typeCode": 33
+            },
+            {
+              "strUnit": "K",
+              "typeCode": 34
+            },
+            {
+              "strUnit": "R",
+              "typeCode": 35
+            }
+          ]
+        },
+        {
+          "typeCode": 2,
+          "strSubType": "CU100 IEC-751",
+          "bIfLimitCheck": true,
+          "pvLowerLimit": -50.0,
+          "pvUpperLimit": 150.0,
+          "rangeMin": 20,
+          "bIfShow_TypeCJC": false,
+          "bIfShow_NumOfWires": true,
+          "bIfShow_CustomTable": false,
+          "pvOffsetMin": 50,
+          "listUnit": [
+            {
+              "strUnit": "℃",
+              "typeCode": 32
+            },
+            {
+              "strUnit": "℉",
+              "typeCode": 33
+            },
+            {
+              "strUnit": "K",
+              "typeCode": 34
+            },
+            {
+              "strUnit": "R",
+              "typeCode": 35
+            }
+          ]
+        },
+        {
+          "typeCode": 4,
+          "strSubType": "PT1000 IEC-751",
+          "bIfLimitCheck": true,
+          "pvLowerLimit": -200.0,
+          "pvUpperLimit": 300.0,
+          "rangeMin": 20,
+          "bIfShow_TypeCJC": false,
+          "bIfShow_NumOfWires": true,
+          "bIfShow_CustomTable": false,
+          "pvOffsetMin": 50,
+          "listUnit": [
+            {
+              "strUnit": "℃",
+              "typeCode": 32
+            },
+            {
+              "strUnit": "℉",
+              "typeCode": 33
+            },
+            {
+              "strUnit": "K",
+              "typeCode": 34
+            },
+            {
+              "strUnit": "R",
+              "typeCode": 35
+            }
+          ]
+        },
+        {
+          "typeCode": 3,
+          "strSubType": "Custom-RTD",
+          "bIfLimitCheck": true,
+          "pvLowerLimit": -200.0,
+          "pvUpperLimit": 300.0,
+          "rangeMin": 20,
+          "bIfShow_TypeCJC": false,
+          "bIfShow_NumOfWires": true,
+          "bIfShow_CustomTable": true,
+          "pvOffsetMin": 50,
+          "listUnit": [
+            {
+              "strUnit": "℃",
+              "typeCode": 32
+            },
+            {
+              "strUnit": "℉",
+              "typeCode": 33
+            },
+            {
+              "strUnit": "K",
+              "typeCode": 34
+            },
+            {
+              "strUnit": "R",
+              "typeCode": 35
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "typeCode": 1,
+      "strTransducerType": "TC",
+      "listSubType": [
+        {
+          "typeCode": 1,
+          "strSubType": "KTC IEC-751",
+          "bIfLimitCheck": true,
+          "pvLowerLimit": -200.0,
+          "pvUpperLimit": 1372.0,
+          "rangeMin": 50,
+          "bIfShow_TypeCJC": true,
+          "bIfShow_NumOfWires": false,
+          "bIfShow_CustomTable": false,
+          "pvOffsetMin": 50,
+          "listUnit": [
+            {
+              "strUnit": "℃",
+              "typeCode": 32
+            },
+            {
+              "strUnit": "℉",
+              "typeCode": 33
+            },
+            {
+              "strUnit": "K",
+              "typeCode": 34
+            },
+            {
+              "strUnit": "R",
+              "typeCode": 35
+            }
+          ]
+        },
+
+        {
+          "typeCode": 0,
+          "strSubType": "RTC IEC-751",
+          "bIfLimitCheck": true,
+          "pvLowerLimit": -40.0,
+          "pvUpperLimit": 1768.0,
+          "rangeMin": 500,
+          "bIfShow_TypeCJC": true,
+          "bIfShow_NumOfWires": false,
+          "bIfShow_CustomTable": false,
+          "pvOffsetMin": 50,
+          "listUnit": [
+            {
+              "strUnit": "℃",
+              "typeCode": 32
+            },
+            {
+              "strUnit": "℉",
+              "typeCode": 33
+            },
+            {
+              "strUnit": "K",
+              "typeCode": 34
+            },
+            {
+              "strUnit": "R",
+              "typeCode": 35
+            }
+          ]
+        },
+
+        {
+          "typeCode": 2,
+          "strSubType": "ETC IEC-751",
+          "bIfLimitCheck": true,
+          "pvLowerLimit": -200.0,
+          "pvUpperLimit": 900.0,
+          "rangeMin": 50,
+          "bIfShow_TypeCJC": true,
+          "bIfShow_NumOfWires": false,
+          "bIfShow_CustomTable": false,
+          "pvOffsetMin": 50,
+          "listUnit": [
+            {
+              "strUnit": "℃",
+              "typeCode": 32
+            },
+            {
+              "strUnit": "℉",
+              "typeCode": 33
+            },
+            {
+              "strUnit": "K",
+              "typeCode": 34
+            },
+            {
+              "strUnit": "R",
+              "typeCode": 35
+            }
+          ]
+        },
+        {
+          "typeCode": 3,
+          "strSubType": "TTC IEC-751",
+          "bIfLimitCheck": true,
+          "pvLowerLimit": -200.0,
+          "pvUpperLimit": 400.0,
+          "rangeMin": 50,
+          "bIfShow_TypeCJC": true,
+          "bIfShow_NumOfWires": false,
+          "bIfShow_CustomTable": false,
+          "pvOffsetMin": 50,
+          "listUnit": [
+            {
+              "strUnit": "℃",
+              "typeCode": 32
+            },
+            {
+              "strUnit": "℉",
+              "typeCode": 33
+            },
+            {
+              "strUnit": "K",
+              "typeCode": 34
+            },
+            {
+              "strUnit": "R",
+              "typeCode": 35
+            }
+          ]
+        },
+        {
+          "typeCode": 4,
+          "strSubType": "JTC IEC-751",
+          "bIfLimitCheck": true,
+          "pvLowerLimit": -200.0,
+          "pvUpperLimit": 1200.0,
+          "rangeMin": 50,
+          "bIfShow_TypeCJC": true,
+          "bIfShow_NumOfWires": false,
+          "bIfShow_CustomTable": false,
+          "pvOffsetMin": 50,
+          "listUnit": [
+            {
+              "strUnit": "℃",
+              "typeCode": 32
+            },
+            {
+              "strUnit": "℉",
+              "typeCode": 33
+            },
+            {
+              "strUnit": "K",
+              "typeCode": 34
+            },
+            {
+              "strUnit": "R",
+              "typeCode": 35
+            }
+          ]
+        },
+        {
+          "typeCode": 5,
+          "strSubType": "BTC IEC-751",
+          "bIfLimitCheck": true,
+          "pvLowerLimit": 320.0,
+          "pvUpperLimit": 1820.0,
+          "rangeMin": 500,
+          "bIfShow_TypeCJC": false,
+          "bIfShow_NumOfWires": false,
+          "bIfShow_CustomTable": false,
+          "pvOffsetMin": 50,
+          "listUnit": [
+            {
+              "strUnit": "℃",
+              "typeCode": 32
+            },
+            {
+              "strUnit": "℉",
+              "typeCode": 33
+            },
+            {
+              "strUnit": "K",
+              "typeCode": 34
+            },
+            {
+              "strUnit": "R",
+              "typeCode": 35
+            }
+          ]
+        },
+        {
+          "typeCode": 6,
+          "strSubType": "STC IEC-751",
+          "bIfLimitCheck": true,
+          "pvLowerLimit": -40.0,
+          "pvUpperLimit": 1768.0,
+          "rangeMin": 500,
+          "bIfShow_TypeCJC": true,
+          "bIfShow_NumOfWires": false,
+          "bIfShow_CustomTable": false,
+          "pvOffsetMin": 50,
+          "listUnit": [
+            {
+              "strUnit": "℃",
+              "typeCode": 32
+            },
+            {
+              "strUnit": "℉",
+              "typeCode": 33
+            },
+            {
+              "strUnit": "K",
+              "typeCode": 34
+            },
+            {
+              "strUnit": "R",
+              "typeCode": 35
+            }
+          ]
+        },
+        {
+          "typeCode": 7,
+          "strSubType": "NTC IEC-751",
+          "bIfLimitCheck": true,
+          "pvLowerLimit": -200.0,
+          "pvUpperLimit": 1300.0,
+          "rangeMin": 50,
+          "bIfShow_TypeCJC": true,
+          "bIfShow_NumOfWires": false,
+          "bIfShow_CustomTable": false,
+          "pvOffsetMin": 50,
+          "listUnit": [
+            {
+              "strUnit": "℃",
+              "typeCode": 32
+            },
+            {
+              "strUnit": "℉",
+              "typeCode": 33
+            },
+            {
+              "strUnit": "K",
+              "typeCode": 34
+            },
+            {
+              "strUnit": "R",
+              "typeCode": 35
+            }
+          ]
+        },
+        {
+          "typeCode": 9,
+          "strSubType": "W526 IEC-751",
+          "bIfLimitCheck": true,
+          "pvLowerLimit": 0,
+          "pvUpperLimit": 2200.0,
+          "rangeMin": 50,
+          "bIfShow_TypeCJC": true,
+          "bIfShow_NumOfWires": false,
+          "bIfShow_CustomTable": false,
+          "pvOffsetMin": 50,
+          "listUnit": [
+            {
+              "strUnit": "℃",
+              "typeCode": 32
+            },
+            {
+              "strUnit": "℉",
+              "typeCode": 33
+            },
+            {
+              "strUnit": "K",
+              "typeCode": 34
+            },
+            {
+              "strUnit": "R",
+              "typeCode": 35
+            }
+          ]
+        },
+        {
+          "typeCode": 10,
+          "strSubType": "W325 IEC-751",
+          "bIfLimitCheck": true,
+          "pvLowerLimit": 0,
+          "pvUpperLimit": 2200.0,
+          "rangeMin": 50,
+          "bIfShow_TypeCJC": true,
+          "bIfShow_NumOfWires": false,
+          "bIfShow_CustomTable": false,
+          "pvOffsetMin": 50,
+          "listUnit": [
+            {
+              "strUnit": "℃",
+              "typeCode": 32
+            },
+            {
+              "strUnit": "℉",
+              "typeCode": 33
+            },
+            {
+              "strUnit": "K",
+              "typeCode": 34
+            },
+            {
+              "strUnit": "R",
+              "typeCode": 35
+            }
+          ]
+        },
+        {
+          "typeCode": 8,
+          "strSubType": "Custom-TC",
+          "bIfLimitCheck": true,
+          "pvLowerLimit": 0,
+          "pvUpperLimit": 3000.0,
+          "rangeMin": 50,
+          "bIfShow_TypeCJC": true,
+          "bIfShow_NumOfWires": false,
+          "bIfShow_CustomTable": true,
+          "pvOffsetMin": 50,
+          "listUnit": [
+            {
+              "strUnit": "℃",
+              "typeCode": 32
+            },
+            {
+              "strUnit": "℉",
+              "typeCode": 33
+            },
+            {
+              "strUnit": "K",
+              "typeCode": 34
+            },
+            {
+              "strUnit": "R",
+              "typeCode": 35
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "typeCode": 2,
+      "strTransducerType": "mV ",
+      "listSubType": [
+        {
+          "typeCode": 0,
+          "strSubType": "mV",
+          "bIfLimitCheck": true,
+          "pvLowerLimit": -100.0,
+          "pvUpperLimit": 100.0,
+          "rangeMin": 10,
+          "bIfShow_TypeCJC": false,
+          "bIfShow_NumOfWires": false,
+          "bIfShow_CustomTable": false,
+          "pvOffsetMin": 10,
+          "listUnit": [
+            {
+              "strUnit": "mV",
+              "typeCode": 49
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "typeCode": 3,
+      "strTransducerType": "R",
+      "listSubType": [
+        {
+          "typeCode": 0,
+          "strSubType": "R_10K",
+          "bIfLimitCheck": true,
+          "pvLowerLimit": 0,
+          "pvUpperLimit": 10000.0,
+          "rangeMin": 1000,
+          "bIfShow_TypeCJC": false,
+          "bIfShow_NumOfWires": true,
+          "bIfShow_CustomTable": false,
+          "pvOffsetMin": 500,
+          "listUnit": [
+            {
+              "strUnit": "KΩ",
+              "typeCode": 162
+            },
+            {
+              "strUnit": "Ω",
+              "typeCode": 161
+            }
+          ]
+        },
+        {
+          "typeCode": 4,
+          "strSubType": "R_400R",
+          "bIfLimitCheck": true,
+          "pvLowerLimit": 0,
+          "pvUpperLimit": 400.0,
+          "rangeMin": 40,
+          "bIfShow_TypeCJC": false,
+          "bIfShow_NumOfWires": true,
+          "bIfShow_CustomTable": false,
+          "pvOffsetMin": 20,
+          "listUnit": [
+            {
+              "strUnit": "Ω",
+              "typeCode": 161
+            }
+          ]
+        },
+        {
+          "typeCode": 5,
+          "strSubType": "R_100K",
+          "bIfLimitCheck": true,
+          "pvLowerLimit": 0,
+          "pvUpperLimit": 100000.0,
+          "rangeMin": 10000,
+          "bIfShow_TypeCJC": false,
+          "bIfShow_NumOfWires": true,
+          "bIfShow_CustomTable": false,
+          "pvOffsetMin": 5000,
+          "listUnit": [
+            {
+              "strUnit": "KΩ",
+              "typeCode": 162
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "typeCode": 4,
+      "strTransducerType": "mA",
+      "listSubType": [
+        {
+          "typeCode": 0,
+          "strSubType": "mA",
+          "bIfLimitCheck": true,
+          "pvLowerLimit": -20.0,
+          "pvUpperLimit": 20.0,
+          "rangeMin": 0.1,
+          "bIfShow_TypeCJC": false,
+          "bIfShow_NumOfWires": false,
+          "bIfShow_CustomTable": false,
+          "pvOffsetMin": 1,
+          "listUnit": [
+            {
+              "strUnit": "mA",
+              "typeCode": 64
+            }
+         ]
+        }
+      ]
+    },
+    {
+      "typeCode": 5,
+      "strTransducerType": "V",
+      "listSubType": [
+        {
+          "typeCode": 0,
+          "strSubType": "V",
+          "bIfLimitCheck": true,
+          "pvLowerLimit": -10.0,
+          "pvUpperLimit": 10.0,
+          "rangeMin": 0.1,
+          "bIfShow_TypeCJC": false,
+          "bIfShow_NumOfWires": false,
+          "bIfShow_CustomTable": false,
+          "pvOffsetMin": 0.5,
+          "listUnit": [
+           {
+              "strUnit": "V",
+              "typeCode": 50
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

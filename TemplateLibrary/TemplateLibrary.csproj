@@ -32,14 +32,20 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="LiveCharts">
-      <HintPath>D:\资源文件\公司资源\Dll\LiveCharts.dll</HintPath>
+    <Reference Include="LiveCharts, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\公司资源\Dll\LiveCharts.dll</HintPath>
     </Reference>
-    <Reference Include="LiveCharts.Wpf">
-      <HintPath>D:\资源文件\公司资源\Dll\LiveCharts.Wpf.dll</HintPath>
+    <Reference Include="LiveCharts.Wpf, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\公司资源\Dll\LiveCharts.Wpf.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Expression.Interactions, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -57,8 +63,20 @@
     <Compile Include="AnimationStyle\AnimationTemplate1.xaml.cs">
       <DependentUpon>AnimationTemplate1.xaml</DependentUpon>
     </Compile>
+    <Compile Include="AnimationStyle\GIFAnimationTemplate.xaml.cs">
+      <DependentUpon>GIFAnimationTemplate.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AnimationStyle\Scrolling_Effect1.xaml.cs">
+      <DependentUpon>Scrolling_Effect1.xaml</DependentUpon>
+    </Compile>
     <Compile Include="BaseControlPromotionTemplate\ComboBoxChoice\ComboBox1.xaml.cs">
       <DependentUpon>ComboBox1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BaseControlPromotionTemplate\DataGridControl\MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BaseControlPromotionTemplate\DataGridControl\TableControl.xaml.cs">
+      <DependentUpon>TableControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="BaseControlPromotionTemplate\Input_Information\InputInformation1.xaml.cs">
       <DependentUpon>InputInformation1.xaml</DependentUpon>
@@ -71,6 +89,12 @@
     </Compile>
     <Compile Include="BaseControlTemplate\Button\ButonTemplate1.xaml.cs">
       <DependentUpon>ButonTemplate1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BaseControlTemplate\Button\ButonTemplate2.xaml.cs">
+      <DependentUpon>ButonTemplate2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BaseControlTemplate\Button\ButonTemplate3.xaml.cs">
+      <DependentUpon>ButonTemplate3.xaml</DependentUpon>
     </Compile>
     <Compile Include="BaseControlTemplate\ComboBox\ComboBoxTemplate1.xaml.cs">
       <DependentUpon>ComboBoxTemplate1.xaml</DependentUpon>
@@ -141,7 +165,23 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="AnimationStyle\GIFAnimationTemplate.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AnimationStyle\Scrolling_Effect1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="BaseControlPromotionTemplate\ComboBoxChoice\ComboBox1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="BaseControlPromotionTemplate\DataGridControl\MainWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="BaseControlPromotionTemplate\DataGridControl\TableControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -158,6 +198,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="BaseControlTemplate\Button\ButonTemplate1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="BaseControlTemplate\Button\ButonTemplate2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="BaseControlTemplate\Button\ButonTemplate3.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -53,7 +53,10 @@
     <Compile Include="BaseModel.cs" />
     <Compile Include="CursorHelper.cs" />
     <Compile Include="DataConversion.cs" />
+    <Compile Include="FilePath_Tool.cs" />
     <Compile Include="FileTool.cs" />
+    <Compile Include="FontLanguage_Tool.cs" />
+    <Compile Include="Image_Processing.cs" />
     <Compile Include="Json_Operation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>

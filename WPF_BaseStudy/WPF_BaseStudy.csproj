@@ -57,6 +57,9 @@
     <Compile Include="BindingStudy\BinDingStudy3.xaml.cs">
       <DependentUpon>BinDingStudy3.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Delegate\MainWondow.xaml.cs">
+      <DependentUpon>MainWondow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Event\EventExplain.xaml.cs">
       <DependentUpon>EventExplain.xaml</DependentUpon>
     </Compile>
@@ -92,6 +95,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="BindingStudy\BinDingStudy3.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Delegate\MainWondow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
