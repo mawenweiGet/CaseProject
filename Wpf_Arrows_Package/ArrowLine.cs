@@ -22,7 +22,7 @@ namespace Wpf_Arrows_Package
         /// <summary>
         /// Ïß¶Î
         /// </summary>
-        private readonly LineSegment lineSegment = new LineSegment();
+        private readonly LineSegment lineSegment = new LineSegment() { };
 
         #endregion Fields
 
@@ -34,7 +34,14 @@ namespace Wpf_Arrows_Package
         public Point EndPoint
         {
             get { return (Point)this.GetValue(EndPointProperty); }
-            set { this.SetValue(EndPointProperty, value); }
+            set 
+            {
+                if (ArrowEnds != ArrowEnds.None)
+                {
+                    value.X = value.X - StrokeThickness;
+                }
+                this.SetValue(EndPointProperty, value);
+            }
         }
 
         #endregion Properties

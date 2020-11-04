@@ -29,32 +29,27 @@ namespace TestProject
         public DivdingTableControl()
         {
             InitializeComponent();
+            _dt.Columns.Add(new DataColumn("NO", typeof(string)));
             _dt.Columns.Add(new DataColumn("ParamKey", typeof(string)));
             _dt.Columns.Add(new DataColumn("ParamValue", typeof(string)));
 
+            //DataRow dr = _dt.NewRow();
+            //dr[0] = "测量值Ω";
+            //dr[1] = "温度值℃";
+            //_dt.Rows.Add(dr);
+            Init();
+        }
+        public void Init()
+        {
+            for (int i = 0; i < 48; i++)
+            {
+                DataRow dr = _dt.NewRow();
+                dr[0] = i+1;
+                dr[1] = "";
+                dr[2] = "";
+                _dt.Rows.Add(dr);
+            }
             this.dgData.ItemsSource = null;
-            this.dgData.ItemsSource = _dt.DefaultView;
-        }
-        /// <summary>
-        /// 删除行
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void btnDel_Click(object sender, RoutedEventArgs e)
-        {
-            ((DataRowView)this.dgData.SelectedItem).Row.Delete();
-        }
-
-        /// <summary>
-        /// 添加行
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void btnAdd_Click(object sender, RoutedEventArgs e)
-        {
-            _dt = ((DataView)this.dgData.ItemsSource).Table;
-            DataRow dr = _dt.NewRow();
-            _dt.Rows.Add(dr);
             this.dgData.ItemsSource = _dt.DefaultView;
         }
         #region 自定义依赖项属性

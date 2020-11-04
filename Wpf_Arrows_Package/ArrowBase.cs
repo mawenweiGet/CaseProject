@@ -50,6 +50,15 @@ namespace Wpf_Arrows_Package
             new FrameworkPropertyMetadata(false, FrameworkPropertyMetadataOptions.AffectsMeasure));
 
         /// <summary>
+        /// 箭头是否连线的依赖属性
+        /// </summary>
+        public static readonly DependencyProperty IsConnectingProperty = DependencyProperty.Register(
+            "IsConnecting",
+            typeof(bool),
+            typeof(ArrowBase),
+            new FrameworkPropertyMetadata(false, FrameworkPropertyMetadataOptions.AffectsMeasure));
+
+        /// <summary>
         /// 开始点
         /// </summary>
         public static readonly DependencyProperty StartPointProperty = DependencyProperty.Register(
@@ -141,12 +150,27 @@ namespace Wpf_Arrows_Package
         }
 
         /// <summary>
+        /// 箭头端是否连线
+        /// </summary>
+        public bool IsConnecting
+        {
+            get { return (bool)this.GetValue(IsConnectingProperty); }
+            set { this.SetValue(IsConnectingProperty, value); }
+        }
+        /// <summary>
         /// 开始点
         /// </summary>
         public Point StartPoint
         {
             get { return (Point)this.GetValue(StartPointProperty); }
-            set { this.SetValue(StartPointProperty, value); }
+            set 
+            {
+                if (ArrowEnds != ArrowEnds.None)
+                {
+                    value.X = value.X + (StrokeThickness);
+                }
+                this.SetValue(StartPointProperty, value);
+            }
         }
 
         /// <summary>
@@ -161,7 +185,7 @@ namespace Wpf_Arrows_Package
                 // 清空具体形状,避免重复添加
                 this.figureConcrete.Segments.Clear();
                 var segements = this.FillFigure();
-                if (segements != null)
+                if (segements != null && this.IsConnecting)
                 {
                     foreach (var segement in segements)
                     {
@@ -249,7 +273,6 @@ namespace Wpf_Arrows_Package
                 // 计算下半段箭头的点
                 polyseg.Points.Add(endPoint + (vect * matx));
             }
-
             pathfig.IsClosed = this.IsArrowClosed;
         }
 

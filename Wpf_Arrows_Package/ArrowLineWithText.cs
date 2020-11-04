@@ -19,7 +19,14 @@
             typeof(string),
             typeof(ArrowLineWithText),
             new FrameworkPropertyMetadata(string.Empty, FrameworkPropertyMetadataOptions.AffectsRender));
-
+        /// <summary>
+        /// 文本的依赖属性
+        /// </summary>
+        public static readonly DependencyProperty TextFontSizeProperty = DependencyProperty.Register(
+            "TextFontSize",
+            typeof(int),
+            typeof(ArrowLineWithText),
+            new FrameworkPropertyMetadata(12, FrameworkPropertyMetadataOptions.AffectsRender));
         /// <summary>
         /// 文本对齐的依赖属性
         /// </summary>
@@ -58,6 +65,11 @@
         {
             get { return (string)this.GetValue(TextProperty); }
             set { this.SetValue(TextProperty, value); }
+        }
+        public int TextFontSize
+        {
+            get { return (int)this.GetValue(TextFontSizeProperty); }
+            set { this.SetValue(TextFontSizeProperty, value); }
         }
 
         /// <summary>
@@ -126,8 +138,8 @@
                         CultureInfo.CurrentCulture,
                         FlowDirection.LeftToRight,
                         defaultTypeface,
-                        SystemFonts.StatusFontSize,
-                        Brushes.Black)
+                        TextFontSize,
+                        new SolidColorBrush((Color)ColorConverter.ConvertFromString("#898989")))
                         {
                             // 文本最大宽度为线的宽度
                             MaxTextWidth = vec.Length,

@@ -69,10 +69,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="CommandWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
+    <Compile Include="Arrow.cs" />
+    <Compile Include="Test.xaml.cs">
+      <DependentUpon>Test.xaml</DependentUpon>
+    </Compile>
     <Page Include="DivdingTableControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -85,9 +85,6 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="CommandWindow.xaml.cs">
-      <DependentUpon>CommandWindow.xaml</DependentUpon>
-    </Compile>
     <Compile Include="DivdingTableControl.xaml.cs">
       <DependentUpon>DivdingTableControl.xaml</DependentUpon>
     </Compile>
@@ -96,6 +93,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Resources\AppDictionary.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Test.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -139,6 +140,10 @@
     <ProjectReference Include="..\ResourceBase\ResourceBase.csproj">
       <Project>{8bf815eb-e746-47ce-a2de-45f38a6441fe}</Project>
       <Name>ResourceBase</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Wpf_Arrows_Package\Wpf_Arrows_Package.csproj">
+      <Project>{7c57e81c-386a-4120-8bb2-5eb4738562c2}</Project>
+      <Name>Wpf_Arrows_Package</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

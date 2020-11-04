@@ -6,6 +6,9 @@
         xmlns:local="clr-namespace:TestProject"
         mc:Ignorable="d">
     <Grid>
-        <local:DivdingTableControl/>
+        
+    <!--<local:DivdingTableControl/>-->
+        <!--<local:Test/>-->
+        <Canvas x:Name="TextCanvas"></Canvas>
     </Grid>
 </Window>

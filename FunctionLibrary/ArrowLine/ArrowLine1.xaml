@@ -16,6 +16,7 @@
                                   Stroke="Blue"
                                   StrokeDashArray="5,3"
                                   Text="推导出"
+                                  TextFontSize="17"
                                   TextAlignment="Center"
                                   StartPoint="110,110"
                                   EndPoint="180,180" />
@@ -26,7 +27,7 @@
         <arrows:AdjustableArrowBezierCurve ControlPoint1="230,200"
                                            ControlPoint2="300,300"
                                            ShowControl="True"
-                                           Stroke="Black"
+                                           Stroke="CadetBlue"
                                            StartPoint="200,200"
                                            EndPoint="500,300" />
     </Canvas>

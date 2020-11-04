@@ -29,7 +29,10 @@ namespace FunctionLibrary.ArrowLine
             Wpf_Arrows_Package.ArrowLine al = new Wpf_Arrows_Package.ArrowLine()
             {
                 ArrowEnds = ArrowEnds.Both,
-                Stroke = new SolidColorBrush(System.Windows.Media.Colors.Red),
+                IsArrowClosed = true,
+                //Stroke = new SolidColorBrush(System.Windows.Media.Colors.Red),
+                StrokeThickness=4,
+                Stroke=new SolidColorBrush((Color)ColorConverter.ConvertFromString("#898989")),
                 StartPoint = new Point() { X = 150, Y = 50 },
                 EndPoint = new Point() { X = 250, Y = 50 },
             };
