@@ -105,6 +105,10 @@
       <Project>{d3a18fbf-2499-4c00-81b0-82b32b2f98fd}</Project>
       <Name>FunctionLibrary</Name>
     </ProjectReference>
+    <ProjectReference Include="..\LiveCharLibrary\LiveCharLibrary.csproj">
+      <Project>{b317296a-aa8c-43ef-ba4d-a50a8024a61f}</Project>
+      <Name>LiveCharLibrary</Name>
+    </ProjectReference>
     <ProjectReference Include="..\LocalTool\LocalTool.csproj">
       <Project>{13c2b01d-edb7-4fa0-8b84-9d10148610d4}</Project>
       <Name>LocalTool</Name>

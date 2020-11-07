@@ -70,7 +70,9 @@
     </MenuItem>
     <MenuItem Name="LiveChar" HeaderText="LiveChar模版" MenuId="35" ParentMenuId="3">
       <MenuItem Name="LiveCharts1" HeaderText="数据视图" MenuId="351" ParentMenuId="35" FormName="TemplateLibrary.dll" MenuName="TemplateLibrary.LiveCharts.LiveChars1" OpenType="1"></MenuItem>      
-      <MenuItem Name="LiveCharts2" HeaderText="事件案例" MenuId="352" ParentMenuId="35" FormName="TemplateLibrary.dll" MenuName="TemplateLibrary.LiveCharts.LiveChars2" OpenType="1"></MenuItem>      
+      <MenuItem Name="LiveCharts2" HeaderText="数据符号" MenuId="352" ParentMenuId="35" FormName="LiveCharLibrary.dll" MenuName="LiveCharLibrary.LiveChar1" OpenType="1"></MenuItem>      
+      <MenuItem Name="LiveCharts3" HeaderText="自定义提示1" MenuId="353" ParentMenuId="35" FormName="LiveCharLibrary.dll" MenuName="LiveCharLibrary.LiveChar2" OpenType="1"></MenuItem>      
+      <MenuItem Name="LiveCharts4" HeaderText="自定义提示2" MenuId="354" ParentMenuId="35" FormName="LiveCharLibrary.dll" MenuName="LiveCharLibrary.LiveChar3" OpenType="1"></MenuItem>      
     
     </MenuItem>    
   </MenuItem>

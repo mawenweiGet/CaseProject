@@ -13,7 +13,7 @@
                 <lvc:Axis Foreground="DodgerBlue" Title="电流"/>
                 <lvc:Axis Foreground="IndianRed" Title="电压" Position="RightTop">
                     <lvc:Axis.Separator>
-                        <lvc:Separator IsEnabled="False"></lvc:Separator>
+                        <lvc:Separator IsEnabled="True"></lvc:Separator>
                     </lvc:Axis.Separator>
                 </lvc:Axis>
                 <lvc:Axis Foreground="DarkOliveGreen" Title="电阻" Position="RightTop">

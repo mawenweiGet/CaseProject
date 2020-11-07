@@ -1,0 +1,29 @@
+﻿<UserControl x:Class="LiveCharLibrary.LiveChar3"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:LiveCharLibrary"
+             xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <lvc:CartesianChart LegendLocation="Right">
+            <lvc:CartesianChart.Series>
+                <lvc:LineSeries Title="2016 Customers" Values="{Binding Customers}"></lvc:LineSeries>
+            </lvc:CartesianChart.Series>
+            <lvc:CartesianChart.AxisX>
+                <lvc:Axis x:Name="X_Explain" Title="温度" IsMerged="True" Position="LeftBottom"/>
+            </lvc:CartesianChart.AxisX>
+            <lvc:CartesianChart.AxisY>
+                <lvc:Axis x:Name="Y_Explain" Title="电阻值" IsMerged="True" Position="LeftBottom"/>
+            </lvc:CartesianChart.AxisY>
+            <lvc:CartesianChart.DataTooltip>
+                <local:CustomersTooltip/>
+            </lvc:CartesianChart.DataTooltip>
+            <!--<lvc:CartesianChart.ChartLegend>
+                <local:CustomersLegend></local:CustomersLegend>
+            </lvc:CartesianChart.ChartLegend>-->
+        </lvc:CartesianChart>
+    </Grid>
+</UserControl>

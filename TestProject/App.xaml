@@ -4,6 +4,6 @@
              xmlns:local="clr-namespace:TestProject"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <ResourceDictionary Source="pack://application:,,,/ResourceBase;component/StyleResources/WindowsStyle/WindowsStyle.xaml"/>
     </Application.Resources>
 </Application>

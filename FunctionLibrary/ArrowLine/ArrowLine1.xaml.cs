@@ -29,12 +29,14 @@ namespace FunctionLibrary.ArrowLine
             Wpf_Arrows_Package.ArrowLine al = new Wpf_Arrows_Package.ArrowLine()
             {
                 ArrowEnds = ArrowEnds.Both,
+                ArrowAngle = 40,
+                ArrowLength = 10,
                 IsArrowClosed = true,
-                //Stroke = new SolidColorBrush(System.Windows.Media.Colors.Red),
-                StrokeThickness=4,
-                Stroke=new SolidColorBrush((Color)ColorConverter.ConvertFromString("#898989")),
-                StartPoint = new Point() { X = 150, Y = 50 },
-                EndPoint = new Point() { X = 250, Y = 50 },
+                IsConnecting = true,
+                StrokeThickness = 2,
+                Stroke = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#898989")),
+                StartPoint = new Point() { X = 150, Y = 100 },
+                EndPoint = new Point() { X = 250, Y = 100 },
             };
             TextCanvas.Children.Add(al);
 

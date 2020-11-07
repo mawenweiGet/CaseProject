@@ -1,7 +1,10 @@
-﻿using System;
+﻿using LocalTool;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Data;
 using System.Linq;
+using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -21,26 +24,67 @@ namespace TestProject
     /// </summary>
     public partial class Test : UserControl
     {
-        private DataTable _dt = new DataTable();
-
+        //private DataTable _dt = new DataTable();
+        private CData_CustomTable _dtobj = new CData_CustomTable();
         public Test()
         {
             InitializeComponent();
+            Init();
 
-            _dt.Columns.Add(new DataColumn("NO", typeof(string)));
-            _dt.Columns.Add(new DataColumn("ParamKey", typeof(string)));
-            _dt.Columns.Add(new DataColumn("ParamValue", typeof(string)));
+            //MailboxOperation.SendEmail("smtp.163.com", "925634430@qq.com", "mww_a_syp@163.com","异常数据","有附件请查收！", @"D:\资源文件\公司资源\邮件邮箱\服务器配置信息.png", "DKITNSDRTOCBTOZR");
 
+        }
+        public void Init()
+        {
+            ObservableCollection<CData_CustomTable.DataModel> dataModels = new ObservableCollection<CData_CustomTable.DataModel>();
             for (int i = 0; i < 48; i++)
             {
-                DataRow dr = _dt.NewRow();
-                dr[0] = i;
-                dr[1] = i.ToString()+i.ToString();
-                dr[2] = i.ToString() + i.ToString()+i.ToString();
-                _dt.Rows.Add(dr);
+                CData_CustomTable.DataModel data = new CData_CustomTable.DataModel()
+                {
+                    NO = i + 1,
+                    Temperature = i + 1,
+                    Resistance = i + 1
+                };
+                dataModels.Add(data);
             }
-            this.TestDataGrid.ItemsSource = null;
-            this.TestDataGrid.ItemsSource = _dt.DefaultView;
+            _dtobj.customTable = dataModels;
+            this.dataGridAlarm.ItemsSource = null;
+            this.dataGridAlarm.ItemsSource = dataModels;
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            foreach (CData_CustomTable.DataModel row in _dtobj.customTable)
+            {
+                string res1 = row.NO.ToString();
+                string res2 = row.Temperature.ToString();
+                string res3 = row.Resistance.ToString();
+            }
+        }
+    }
+    public class CData_CustomTable : BaseModel
+    {
+        public class DataModel
+        {
+            public int NO { get; set; }
+            /// <summary>
+            /// 温度
+            /// </summary>
+            public float Temperature { get; set; }
+            /// <summary>
+            /// 电阻
+            /// </summary>
+            public float Resistance { get; set; }
+        }
+        private ObservableCollection<DataModel> _customTable;
+        public ObservableCollection<DataModel> customTable
+        {
+            get => _customTable;
+            set
+            {
+                _customTable = value;
+                OnPropertyChanged();
+            }
         }
     }
 }

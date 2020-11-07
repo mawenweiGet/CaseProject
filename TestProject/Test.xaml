@@ -7,89 +7,83 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <UserControl.Resources>
-        <Style x:Key="DataGridTestStyle" TargetType="{x:Type DataGrid}">
-            <Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.ControlBrushKey}}"/>
-            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
-            <Setter Property="BorderBrush" Value="#FF688CAF"/>
-            <Setter Property="BorderThickness" Value="1"/>
-            <Setter Property="RowDetailsVisibilityMode" Value="VisibleWhenSelected"/>
-            <Setter Property="ScrollViewer.CanContentScroll" Value="true"/>
-            <Setter Property="ScrollViewer.PanningMode" Value="Both"/>
-            <Setter Property="Stylus.IsFlicksEnabled" Value="False"/>
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="{x:Type DataGrid}">
-                        <Border BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" Padding="{TemplateBinding Padding}" SnapsToDevicePixels="True">
-                            <ScrollViewer x:Name="DG_ScrollViewer" Focusable="false">
-                                <ScrollViewer.Template>
-                                    <ControlTemplate TargetType="{x:Type ScrollViewer}">
-                                        <Grid>
-                                            <Grid.ColumnDefinitions>
-                                                <ColumnDefinition Width="Auto"/>
-                                                <ColumnDefinition Width="*"/>
-                                                <ColumnDefinition Width="Auto"/>
-                                            </Grid.ColumnDefinitions>
-                                            <Grid.RowDefinitions>
-                                                <RowDefinition Height="Auto"/>
-                                                <RowDefinition Height="*"/>
-                                                <RowDefinition Height="Auto"/>
-                                            </Grid.RowDefinitions>
-                                            <StackPanel Orientation="Horizontal" Grid.Column="1">
-                                                <TextBlock  Text="NO."/>
-                                                <TextBlock  Text="NO."/>
-                                                <TextBlock  Text="NO."/>
-                                            </StackPanel>
-                                            <!--<DataGridColumnHeadersPresenter x:Name="PART_ColumnHeadersPresenter" Grid.Column="1"                                                                             Visibility="{Binding HeadersVisibility, ConverterParameter={x:Static DataGridHeadersVisibility.Column}, 
-                                                Converter={x:Static DataGrid.HeadersVisibilityConverter}, RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}}"/>-->
-                                            <ScrollContentPresenter x:Name="PART_ScrollContentPresenter"
-                                                                    CanContentScroll="{TemplateBinding CanContentScroll}"
-                                                                    Grid.ColumnSpan="2" Grid.Row="1"/>
-                                            <ScrollBar x:Name="PART_VerticalScrollBar" Grid.Column="2" Background="Red"
-                                                       Maximum="{TemplateBinding ScrollableHeight}" Orientation="Vertical" Grid.Row="1"
-                                                       Visibility="{TemplateBinding ComputedVerticalScrollBarVisibility}" 
-                                                       Value="{Binding VerticalOffset, Mode=OneWay, RelativeSource={RelativeSource TemplatedParent}}"
-                                                       ViewportSize="{TemplateBinding ViewportHeight}"/>
-                                            <Grid Grid.Column="1" Grid.Row="2">
-                                                <Grid.ColumnDefinitions>
-                                                    <ColumnDefinition Width="{Binding NonFrozenColumnsViewportHorizontalOffset, RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}}"/>
-                                                    <ColumnDefinition Width="*"/>
-                                                </Grid.ColumnDefinitions>
-                                                <ScrollBar x:Name="PART_HorizontalScrollBar" Background="Red" Grid.Column="1" Maximum="{TemplateBinding ScrollableWidth}" Orientation="Horizontal" Visibility="{TemplateBinding ComputedHorizontalScrollBarVisibility}" Value="{Binding HorizontalOffset, Mode=OneWay, RelativeSource={RelativeSource TemplatedParent}}" ViewportSize="{TemplateBinding ViewportWidth}"/>
-                                            </Grid>
-                                        </Grid>
-                                    </ControlTemplate>
-                                </ScrollViewer.Template>
-                                <ItemsPresenter SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
-                            </ScrollViewer>
-                        </Border>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-            <Style.Triggers>
-                <MultiTrigger>
-                    <MultiTrigger.Conditions>
-                        <Condition Property="IsGrouping" Value="true"/>
-                        <Condition Property="VirtualizingPanel.IsVirtualizingWhenGrouping" Value="false"/>
-                    </MultiTrigger.Conditions>
-                    <Setter Property="ScrollViewer.CanContentScroll" Value="false"/>
-                </MultiTrigger>
-            </Style.Triggers>
-        </Style>
+        <!--<Style TargetType="DataGridCell">
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+        </Style>-->
     </UserControl.Resources>
     <Grid>
-        <DataGrid x:Name="TestDataGrid" Style="{DynamicResource DataGridTestStyle}">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <DataGrid Name="dataGridAlarm" Grid.Row="0" AutoGenerateColumns="False" CanUserAddRows="False" CanUserResizeColumns="True" 
+                      SelectionMode="Single" FontSize="16" BorderThickness="1,1,2,1" BorderBrush="#D3D3D4" 
+                      HorizontalAlignment="Left" VerticalAlignment="Top" 
+                      Height="300" Background="#F8F9FA"  Width="360">
+            <DataGrid.Style>
+                <Style TargetType="DataGrid">
+                    <!--网格线颜色-->
+                    <Setter Property="CanUserResizeColumns" Value="false"/>
+                    <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto"/>
+                    <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Auto"/>
+                    <Setter Property="HeadersVisibility" Value="Column"/>
+                    <Setter Property="HorizontalGridLinesBrush">
+                        <Setter.Value>
+                            <SolidColorBrush Color="#D3D3D4"/>
+                        </Setter.Value>
+                    </Setter>
+                    <Setter Property="VerticalGridLinesBrush">
+                        <Setter.Value>
+                            <SolidColorBrush Color="#D3D3D4"/>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </DataGrid.Style>
+            <DataGrid.ColumnHeaderStyle>
+                <Style TargetType="DataGridColumnHeader">
+                    <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                    <Setter Property="Background" Value="Transparent"/>
+                    <Setter Property="Foreground" Value="#898989"/>
+                    <Setter Property="BorderThickness" Value="1"/>
+                    <Setter Property="BorderBrush" Value="#D3D3D4"/>
+                </Style>
+            </DataGrid.ColumnHeaderStyle>
+            <DataGrid.RowStyle>
+                <Style TargetType="DataGridRow">
+                    <Setter Property="Background" Value="Transparent"/>
+                    <Setter Property="Height" Value="35"/>
+                    <Setter Property="Foreground" Value="#898989" />
+                    <Setter Property="HorizontalAlignment" Value="Center"/>
+                    <Setter Property="VerticalAlignment" Value="Center"/>
+                </Style>
+            </DataGrid.RowStyle>
+
+
             <DataGrid.Columns>
-                <DataGridTextColumn>
-                    <DataGridTextColumn.Header>
-                        测试1
-                    </DataGridTextColumn.Header>
-                </DataGridTextColumn>
-                <DataGridTextColumn>
-                    <DataGridTextColumn.Header>
-                        测试2
-                    </DataGridTextColumn.Header>
-                </DataGridTextColumn>
-            </DataGrid.Columns>
+                <DataGridTemplateColumn  Width="50" Header="序号"  >
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding NO}" HorizontalAlignment="Center"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Width="5*" Header="测量值(Ω)" >
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBox  Text="{Binding Temperature, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Center" Width="50" BorderThickness="0" Background="Transparent"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn Width="5*" Header="温度值(℃)">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBox  Text="{Binding Resistance, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Center" Width="50" BorderThickness="0" Background="Transparent"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns >
         </DataGrid>
+        <Button Width="100" Height="50" Grid.Row="1" Click="Button_Click"/>
     </Grid>
 </UserControl>

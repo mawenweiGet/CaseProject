@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Blend for Visual Studio Version 16
+# Visual Studio Version 16
 VisualStudioVersion = 16.0.30011.22
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NModbus4", "NModbus4\NModbus4.csproj", "{FF96B252-2B24-44A1-A09C-6401B5D7ED23}"
@@ -24,6 +24,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestProject", "TestProject\TestProject.csproj", "{3EB4D030-C2D5-4EC1-96CB-FBCDE1729828}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPF_BaseStudy", "WPF_BaseStudy\WPF_BaseStudy.csproj", "{2B40684A-D7AE-4B36-951F-0E99890DA358}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LiveCharLibrary", "LiveCharLibrary\LiveCharLibrary.csproj", "{B317296A-AA8C-43EF-BA4D-A50A8024A61F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -344,6 +346,36 @@ Global
 		{2B40684A-D7AE-4B36-951F-0E99890DA358}.Release|x64.Build.0 = Release|Any CPU
 		{2B40684A-D7AE-4B36-951F-0E99890DA358}.Release|x86.ActiveCfg = Release|Any CPU
 		{2B40684A-D7AE-4B36-951F-0E99890DA358}.Release|x86.Build.0 = Release|Any CPU
+		{B317296A-AA8C-43EF-BA4D-A50A8024A61F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B317296A-AA8C-43EF-BA4D-A50A8024A61F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B317296A-AA8C-43EF-BA4D-A50A8024A61F}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{B317296A-AA8C-43EF-BA4D-A50A8024A61F}.Debug|ARM.Build.0 = Debug|Any CPU
+		{B317296A-AA8C-43EF-BA4D-A50A8024A61F}.Debug|ARM64.ActiveCfg = Debug|Any CPU
+		{B317296A-AA8C-43EF-BA4D-A50A8024A61F}.Debug|ARM64.Build.0 = Debug|Any CPU
+		{B317296A-AA8C-43EF-BA4D-A50A8024A61F}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{B317296A-AA8C-43EF-BA4D-A50A8024A61F}.Debug|x64.Build.0 = Debug|Any CPU
+		{B317296A-AA8C-43EF-BA4D-A50A8024A61F}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{B317296A-AA8C-43EF-BA4D-A50A8024A61F}.Debug|x86.Build.0 = Debug|Any CPU
+		{B317296A-AA8C-43EF-BA4D-A50A8024A61F}.HoneyBadge_Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B317296A-AA8C-43EF-BA4D-A50A8024A61F}.HoneyBadge_Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B317296A-AA8C-43EF-BA4D-A50A8024A61F}.HoneyBadge_Debug|ARM.ActiveCfg = Debug|Any CPU
+		{B317296A-AA8C-43EF-BA4D-A50A8024A61F}.HoneyBadge_Debug|ARM.Build.0 = Debug|Any CPU
+		{B317296A-AA8C-43EF-BA4D-A50A8024A61F}.HoneyBadge_Debug|ARM64.ActiveCfg = Debug|Any CPU
+		{B317296A-AA8C-43EF-BA4D-A50A8024A61F}.HoneyBadge_Debug|ARM64.Build.0 = Debug|Any CPU
+		{B317296A-AA8C-43EF-BA4D-A50A8024A61F}.HoneyBadge_Debug|x64.ActiveCfg = Debug|Any CPU
+		{B317296A-AA8C-43EF-BA4D-A50A8024A61F}.HoneyBadge_Debug|x64.Build.0 = Debug|Any CPU
+		{B317296A-AA8C-43EF-BA4D-A50A8024A61F}.HoneyBadge_Debug|x86.ActiveCfg = Debug|Any CPU
+		{B317296A-AA8C-43EF-BA4D-A50A8024A61F}.HoneyBadge_Debug|x86.Build.0 = Debug|Any CPU
+		{B317296A-AA8C-43EF-BA4D-A50A8024A61F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B317296A-AA8C-43EF-BA4D-A50A8024A61F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B317296A-AA8C-43EF-BA4D-A50A8024A61F}.Release|ARM.ActiveCfg = Release|Any CPU
+		{B317296A-AA8C-43EF-BA4D-A50A8024A61F}.Release|ARM.Build.0 = Release|Any CPU
+		{B317296A-AA8C-43EF-BA4D-A50A8024A61F}.Release|ARM64.ActiveCfg = Release|Any CPU
+		{B317296A-AA8C-43EF-BA4D-A50A8024A61F}.Release|ARM64.Build.0 = Release|Any CPU
+		{B317296A-AA8C-43EF-BA4D-A50A8024A61F}.Release|x64.ActiveCfg = Release|Any CPU
+		{B317296A-AA8C-43EF-BA4D-A50A8024A61F}.Release|x64.Build.0 = Release|Any CPU
+		{B317296A-AA8C-43EF-BA4D-A50A8024A61F}.Release|x86.ActiveCfg = Release|Any CPU
+		{B317296A-AA8C-43EF-BA4D-A50A8024A61F}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -357,6 +389,7 @@ Global
 		{8F40B3DC-F9CF-4030-B278-236C989B1BA7} = {4254D473-E693-44CC-94CE-C0456D366F4E}
 		{D3A18FBF-2499-4C00-81B0-82B32B2F98FD} = {4254D473-E693-44CC-94CE-C0456D366F4E}
 		{2B40684A-D7AE-4B36-951F-0E99890DA358} = {4254D473-E693-44CC-94CE-C0456D366F4E}
+		{B317296A-AA8C-43EF-BA4D-A50A8024A61F} = {4254D473-E693-44CC-94CE-C0456D366F4E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6773C445-1D21-4EAC-892B-7E7095C7B698}

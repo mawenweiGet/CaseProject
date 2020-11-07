@@ -1,0 +1,24 @@
+﻿<UserControl x:Class="TemplateLibrary.BaseControlTemplate.LiveCharts.MainWindow"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:TemplateLibrary.BaseControlTemplate.LiveCharts"
+             xmlns:locals="clr-namespace:TemplateLibrary.LiveCharts"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <TabControl Name="TabControl" Width="Auto" Background="GhostWhite">
+            <TabItem Header="基础应用" Width="auto" FontSize="18">
+                <Grid Background="AliceBlue">
+                    <locals:LiveChars1/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="数据字串"  Width="auto" FontSize="18">
+                <Grid>
+                    
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</UserControl>

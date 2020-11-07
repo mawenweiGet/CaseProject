@@ -79,5 +79,9 @@ namespace TemplateLibrary.BaseControlPromotionTemplate.DataGridControl
 
         #endregion
 
+        private void btnDel_Click(object sender, MouseButtonEventArgs e)
+        {
+
+        }
     }
 }
