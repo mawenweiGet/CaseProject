@@ -1,11 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Interop;
+using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Threading;
 
@@ -99,5 +102,81 @@ namespace LocalTool
         [DllImport("gdi32.dll", CharSet = CharSet.Auto, SetLastError = true)]
         [return: MarshalAs(UnmanagedType.Bool)]
         static extern bool DeleteObject(IntPtr hObject);
+    }
+    public static class CImageTool
+    {
+
+        public static DrawingImage ReadSvgImage(string path, string name)
+        {
+            string svgPath = path + name + ".svg";
+            DrawingImage image = new DrawingImage();
+            SharpVectors.Renderers.Wpf.WpfDrawingSettings settings = new SharpVectors.Renderers.Wpf.WpfDrawingSettings();
+            settings.IncludeRuntime = true;
+            SharpVectors.Converters.FileSvgReader reader = new SharpVectors.Converters.FileSvgReader(settings);
+            DrawingGroup group;
+            FileStream stream = null;
+            try
+            {
+                stream = new FileStream(svgPath, FileMode.Open, FileAccess.Read);
+                group = reader.Read(stream);
+                image.Drawing = group;
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
+            finally
+            {
+                if (stream != null)
+                {
+                    stream.Close();
+                }
+            }
+            return image;
+        }
+        public static DrawingImage ReadSvgImage(string pathName)
+        {
+            string svgPath = pathName;
+            DrawingImage image = new DrawingImage();
+            SharpVectors.Renderers.Wpf.WpfDrawingSettings settings = new SharpVectors.Renderers.Wpf.WpfDrawingSettings();
+            settings.IncludeRuntime = true;
+            SharpVectors.Converters.FileSvgReader reader = new SharpVectors.Converters.FileSvgReader(settings);
+            DrawingGroup group;
+            FileStream stream = null;
+            try
+            {
+                stream = new FileStream(svgPath, FileMode.Open, FileAccess.Read);
+                group = reader.Read(stream);
+                image.Drawing = group;
+            }
+            catch (Exception e)
+            {
+                //MessageBox.Show(e.Message);
+            }
+            finally
+            {
+                if (stream != null)
+                {
+                    stream.Close();
+                }
+            }
+            return image;
+        }
+        /// <summary>
+        /// 2020.01.19 武琦玮 
+        /// 目的： 通过相对路径读取外部配置文件夹中的图片
+        /// </summary>
+        /// <param name="path"></param>
+        /// <returns></returns>
+        public static BitmapImage GetIconImage(string path)
+        {
+            BitmapImage Icon = new BitmapImage();
+            string relative_path = string.Empty;
+            if (File.Exists(path))
+            {
+                relative_path = "pack://siteoforigin:,,,/" + path;
+            }
+            return Icon = new BitmapImage(new Uri(relative_path, UriKind.RelativeOrAbsolute));
+        }
     }
 }

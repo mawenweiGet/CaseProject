@@ -52,6 +52,6 @@
         </Style>
     </UserControl.Resources>
     <Grid>
-        <TextBox MinWidth="300" MinHeight="50"/>
+        <TextBox MinWidth="300" MinHeight="50" Foreground="Red" BorderThickness="1"/>
     </Grid>
 </UserControl>

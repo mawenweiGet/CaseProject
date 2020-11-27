@@ -132,6 +132,8 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="ImageResources\ProjectUsing\TestImage\404.png" />
+    <Resource Include="ImageResources\ProjectUsing\TestImage\1.png" />
     <Resource Include="ImageResources\ProjectUsing\Animation\Dynamic_Arrow.gif" />
     <Resource Include="ImageResources\ProjectUsing\BinDing\ValueConverter3.png" />
     <Resource Include="ImageResources\ProjectUsing\BinDing\ValueConverter2.png" />

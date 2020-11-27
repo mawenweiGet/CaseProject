@@ -33,40 +33,27 @@ namespace FunctionLibrary.ArrowLine
                 ArrowLength = 10,
                 IsArrowClosed = true,
                 IsConnecting = true,
-                StrokeThickness = 2,
+                StrokeThickness = 1,
                 Stroke = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#898989")),
-                StartPoint = new Point() { X = 150, Y = 100 },
-                EndPoint = new Point() { X = 250, Y = 100 },
+                StartPoint = new Point() { X = 180, Y = 100 },
+                EndPoint = new Point() { X = 280, Y = 100 },
             };
             TextCanvas.Children.Add(al);
 
-            ArrowLineWithText alw = new ArrowLineWithText()
+            Wpf_Arrows_Package.ArrowLine als = new Wpf_Arrows_Package.ArrowLine()
             {
                 ArrowEnds = ArrowEnds.Both,
-                IsTextUp = true,
-                Stroke = new System.Windows.Media.SolidColorBrush(System.Windows.Media.Colors.Blue),
-                //StrokeDashArray = new System.Windows.Media.DoubleCollection() { 2, 4 },
-                Text = "正常量程",// "Normal measuring range",
-                TextAlignment = TextAlignment.Center,
-                StartPoint = new Point() { X = 350, Y = 150 },
-                EndPoint = new Point() { X = 450, Y = 150 },
+                ArrowAngle = 40,
+                ArrowLength = 10,
+                IsArrowClosed = true,
+                IsConnecting = true,
+                StrokeThickness = 5,
+                Stroke = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#898989")),
+                StartPoint = new Point() { X = 180, Y = 120 },
+                EndPoint = new Point() { X = 280, Y = 120 },
             };
-            TextCanvas.Children.Add(alw);
+            TextCanvas.Children.Add(als);
 
-
-            ArrowLineWithText alws = new ArrowLineWithText()
-            {
-                ArrowEnds = ArrowEnds.Both,
-                IsTextUp = false,
-                Stroke = new System.Windows.Media.SolidColorBrush(System.Windows.Media.Colors.Blue),
-                //StrokeDashArray = new System.Windows.Media.DoubleCollection() { 2, 4 },
-                Text = "异常量程",// "Normal measuring range",
-                TextAlignment = TextAlignment.Center,
-                StartPoint = new Point() { X = 550, Y = 250 },
-                EndPoint = new Point() { X = 650, Y = 250 },
-            };
-
-            TextCanvas.Children.Add(alws);
         }
     }
 }

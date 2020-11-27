@@ -6,11 +6,19 @@
         xmlns:local="clr-namespace:TestProject" 
         xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf" 
         xmlns:Wpf_Arrows_Package="clr-namespace:Wpf_Arrows_Package;assembly=Wpf_Arrows_Package" 
-        mc:Ignorable="d">
+        mc:Ignorable="d"
+        Title="选择产品型号">
     <Window.Resources>
+
     </Window.Resources>
-        
+
+    <Grid Name="MainGrid" Background="#EEEEF0">
+
+    </Grid>
+
+
+
     <!--<local:DivdingTableControl/>-->
-    <local:Test/>
+    <!--<local:Test/>-->
 
 </Window>

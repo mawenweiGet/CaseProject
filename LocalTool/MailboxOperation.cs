@@ -24,6 +24,7 @@ namespace LocalTool
         public static bool SendEmail(string serverAddress,string targetMailbox,
             string initiatorsMailbox,string subject,string body,string attachFileName,string authorizationCode)
         {
+            //TODO:案例 MailboxOperation.SendEmail("smtp.163.com", "925634430@qq.com", "mww_a_syp@163.com","异常数据","有附件请查收！", @"D:\资源文件\公司资源\邮件邮箱\服务器配置信息.png", "DKITNSDRTOCBTOZR");
             using (MailMessage mailMessage = new MailMessage())
             using (SmtpClient smtpClient = new SmtpClient(serverAddress))//SMTP服务器
             {

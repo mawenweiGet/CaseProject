@@ -67,6 +67,9 @@
     <Compile Include="LiveChar3.xaml.cs">
       <DependentUpon>LiveChar3.xaml</DependentUpon>
     </Compile>
+    <Compile Include="LiveChar4.xaml.cs">
+      <DependentUpon>LiveChar4.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -103,6 +106,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="LiveChar3.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LiveChar4.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

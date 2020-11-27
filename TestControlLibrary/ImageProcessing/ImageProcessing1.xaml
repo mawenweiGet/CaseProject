@@ -1,0 +1,27 @@
+﻿<UserControl x:Class="TestControlLibrary.ImageProcessing.ImageProcessing1"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:TestControlLibrary.ImageProcessing"
+             mc:Ignorable="d">
+    <Canvas Grid.Column="1" Background="#F5F5F5" ClipToBounds="True"
+            Margin="20,10" Width="400" Height="300" 
+            MouseWheel="A_MouseWheel"
+            MouseMove="A_MouseMove"
+            Name="ImgBox" VerticalAlignment="Top">
+        <Canvas Name="a" Canvas.Left="0" Canvas.Top="0"
+                Width="420" Height="620">
+            <Image Margin="0,0,20,0"  Canvas.Left="0" Canvas.Top="0"
+                   Width="{Binding ElementName=a, Path=ActualWidth}"
+                   Source="pack://application:,,,/ResourceBase;component/ImageResources/ProjectUsing/TestImage/1.png">
+            </Image>
+            <Canvas.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform x:Name="stf" ScaleX="1" ScaleY="1" CenterX="00" CenterY="00"/>
+                    <TranslateTransform x:Name="ttf"/>
+                </TransformGroup>
+            </Canvas.RenderTransform>
+        </Canvas>
+    </Canvas>
+</UserControl>

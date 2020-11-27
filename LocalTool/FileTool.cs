@@ -69,7 +69,7 @@ namespace LocalTool
                     }
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 return -1;
             }

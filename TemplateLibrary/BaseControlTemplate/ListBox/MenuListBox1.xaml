@@ -13,20 +13,24 @@
                         <Grid MinHeight="50" x:Name="grid">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="2"/>
-                                <ColumnDefinition Width="3*"/>
+                                <ColumnDefinition Width="100"/>
                                 <ColumnDefinition Width="7*"/>
                             </Grid.ColumnDefinitions>
                             <Border Name="c_StatusColorEffect" Grid.Column="0"  VerticalAlignment="Top"
                             Height="{Binding ElementName=grid, Path=ActualHeight}"/>
-                            <TextBlock Grid.Column="1" 
+                            <UniformGrid Grid.Column="1">
+                                <TextBlock  
                                        x:Name="iconCode"
+                                       HorizontalAlignment="Left"
+                                       Margin="15 0 0 0"
                                        Text="{Binding IconCode}"                                   
                                        FontSize="15" 
                                        Foreground="#898989"
                                        FontFamily="pack://application:,,,/ResourceBase;component/Font/#icomoon"
-                                       VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                            <TextBlock Grid.Column="2" 
-                                       x:Name="info"
+                                       VerticalAlignment="Center"/>
+                                <TextBlock  
+                                       x:Name="info" Background="Red" 
+                                       HorizontalAlignment="Left"
                                        Foreground="#898989"
                                        FontSize="15"
                                        FontFamily="Source Han Sans CN"
@@ -36,6 +40,7 @@
                                        VerticalAlignment="Center" 
                                        Text="{Binding Info}" 
                                        />
+                            </UniformGrid>
                         </Grid>
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsMouseOver" Value="true">

@@ -101,6 +101,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\BaseClassLibrary\BaseClassLibrary.csproj">
+      <Project>{9e32a112-d8c8-468d-ad86-36bfc6790cb0}</Project>
+      <Name>BaseClassLibrary</Name>
+    </ProjectReference>
     <ProjectReference Include="..\FunctionLibrary\FunctionLibrary.csproj">
       <Project>{d3a18fbf-2499-4c00-81b0-82b32b2f98fd}</Project>
       <Name>FunctionLibrary</Name>

@@ -26,6 +26,25 @@
             <Setter Property="HorizontalContentAlignment" Value="Center"></Setter>
             <!--垂直居中-->
         </Style>
+        <!--<Style TargetType="DataGridRow">
+            <Setter Property="Foreground" Value="Black" />
+            <Style.Triggers>
+                --><!--隔行换色--><!--
+                <Trigger Property="AlternationIndex" Value="0">
+                    <Setter Property="Height" Value="200" />
+                    <Setter Property="Background" Value="Yellow" />
+                </Trigger>
+                <Trigger Property="AlternationIndex" Value="1">
+                    <Setter Property="Height" Value="80" />
+                    <Setter Property="VerticalAlignment" Value="Bottom" />
+                    <Setter Property="Background" Value="AliceBlue" />
+                </Trigger>
+                <Trigger Property="AlternationIndex" Value="2">
+                    <Setter Property="Height" Value="200" />
+                    <Setter Property="Background" Value="Yellow" />
+                </Trigger>
+            </Style.Triggers>
+        </Style>-->
         <Style x:Key="ElementStyle" TargetType="FrameworkElement">
             <Setter Property="VerticalAlignment" Value="Center"></Setter>
             <Setter Property="HorizontalAlignment" Value="Center"></Setter>
@@ -74,82 +93,87 @@
                       Height="{Binding ElementName=Work, Path=ActualHeight}"
                       Width="500">
                 <StackPanel>
-                    <UniformGrid Columns="3" Margin="30 0 0 0">
-                        <Label HorizontalAlignment="Center">NO.</Label>
-                        <Label HorizontalAlignment="Center">温度数据</Label>
-                        <Label HorizontalAlignment="Center">电阻数据</Label>
-                    </UniformGrid>
-                    <DataGrid HeadersVisibility="None" AutoGenerateColumns="False" BorderBrush="AliceBlue" BorderThickness="2"
-                          Height="500" Width="{Binding ElementName=Work, Path=ActualWidth}"
-                          CanUserAddRows="False" x:Name="dgData" GridLinesVisibility="Horizontal">
+                    <DataGrid Name="dgData" Height="400" Width="490" ItemsSource="{Binding}" 
+                             AutoGenerateColumns="False" CanUserAddRows="False" CanUserResizeColumns="True" 
+                             SelectionMode="Extended" FontSize="16" BorderThickness="1,1,2,1" BorderBrush="#D3D3D4" 
+                             HorizontalAlignment="Left" VerticalAlignment="Top" 
+                             Background="#F8F9FA">
+                        <DataGrid.Style>
+                            <Style TargetType="DataGrid">
+                                <!--网格线颜色-->
+                                <Setter Property="CanUserResizeColumns" Value="false"/>
+                                <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto"/>
+                                <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Auto"/>
+                                <Setter Property="HeadersVisibility" Value="Column"/>
+                                <Setter Property="HorizontalGridLinesBrush">
+                                    <Setter.Value>
+                                        <SolidColorBrush Color="#D3D3D4"/>
+                                    </Setter.Value>
+                                </Setter>
+                                <Setter Property="VerticalGridLinesBrush">
+                                    <Setter.Value>
+                                        <SolidColorBrush Color="#D3D3D4"/>
+                                    </Setter.Value>
+                                </Setter>
+                            </Style>
+                        </DataGrid.Style>
+                        <DataGrid.ColumnHeaderStyle>
+                            <Style TargetType="DataGridColumnHeader">
+                                <Setter Property="Height" Value="30"/>
+                                <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                                <Setter Property="Background" Value="Transparent"/>
+                                <Setter Property="Foreground" Value="#898989"/>
+                                <Setter Property="BorderThickness" Value="0.5"/>
+                                <Setter Property="BorderBrush" Value="#D3D3D4"/>
+                            </Style>
+                        </DataGrid.ColumnHeaderStyle>
+                        <DataGrid.RowStyle>
+                            <Style TargetType="DataGridRow">
+                                <Setter Property="Background" Value="Transparent"/>
+                                <Setter Property="Height" Value="35"/>
+                                <Setter Property="Foreground" Value="#898989"/>
+                                <Setter Property="HorizontalAlignment" Value="Center"/>
+                                <Setter Property="VerticalAlignment" Value="Center"/>
+                                <Style.Triggers>
+                                    <Trigger Property="IsSelected" Value="True">
+                                        <Setter Property="Background" Value="Red"/>
+                                    </Trigger>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="#B6D2FF"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </DataGrid.RowStyle>
+
                         <DataGrid.Columns>
-                            <DataGridTemplateColumn Width="50">
+                            <DataGridTemplateColumn  Width="50" Header="NO." ClipboardContentBinding="{Binding NO}">
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
-                                        <Border Margin="0 -1 0 -1" BorderThickness="0,0,1,0" BorderBrush="AliceBlue">
-                                            <TextBlock x:Name="NO_textBlock" Text="{Binding Path=NO,Mode=OneWay}"
-                                                       Foreground="Blue" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                                        </Border>
+                                        <TextBlock Text="{Binding NO}" HorizontalAlignment="Center"/>
                                     </DataTemplate>
                                 </DataGridTemplateColumn.CellTemplate>
                             </DataGridTemplateColumn>
-                            <DataGridTemplateColumn Width="3*">
+                            <DataGridTemplateColumn Width="5*" Header="温度值(Ω)" ClipboardContentBinding="{Binding Temperature}">
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
-                                        <TextBlock x:Name="L_textBlock" Text="{Binding Path=ParamKey,Mode=OneWay,UpdateSourceTrigger=PropertyChanged}"
-                                                   HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                                        <DataTemplate.Triggers>
-                                            <Trigger Property="IsMouseOver" Value="True">
-                                                <!--<Setter TargetName="L_textBlock" Property="Background" Value="Red"/>-->
-                                            </Trigger>
-                                        </DataTemplate.Triggers>
-                                    </DataTemplate>
-                                </DataGridTemplateColumn.CellTemplate>
-                                <DataGridTemplateColumn.CellEditingTemplate>
-                                    <DataTemplate>
-                                        <TextBox  Text="{Binding Path=ParamKey,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,TargetNullValue=请输入温度}"></TextBox>
-                                    </DataTemplate>
-                                </DataGridTemplateColumn.CellEditingTemplate>
-                            </DataGridTemplateColumn>
-                            <DataGridTemplateColumn Width="10">
-                                <DataGridTemplateColumn.CellTemplate>
-                                    <DataTemplate>
-                                        <Border Margin="0 -1 0 -1" BorderThickness="0,0,1,0" BorderBrush="AliceBlue"/>
+                                        <TextBox  Text="{Binding Temperature, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                                                      Foreground="#898989"
+                                                      HorizontalAlignment="Center" Width="50" BorderThickness="0" Background="Transparent"/>
                                     </DataTemplate>
                                 </DataGridTemplateColumn.CellTemplate>
                             </DataGridTemplateColumn>
-                            <DataGridTemplateColumn Width="3*">
+
+                            <DataGridTemplateColumn Width="5*" Header="测量值(℃)" ClipboardContentBinding="{Binding Resistance}">
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
-                                        <TextBlock x:Name="R_textBlock" Text="{Binding Path=ParamValue,Mode=OneWay,UpdateSourceTrigger=PropertyChanged}"
-                                                   HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                                        <DataTemplate.Triggers>
-                                            <Trigger Property="IsMouseOver" Value="True">
-                                                <!--<Setter TargetName="R_textBlock" Property="Background" Value="Red"/>-->
-                                            </Trigger>
-                                        </DataTemplate.Triggers>
+                                        <TextBox  Text="{Binding Resistance, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                                                      Foreground="#898989"
+                                                      HorizontalAlignment="Center" Width="50" BorderThickness="0" Background="Transparent"/>
                                     </DataTemplate>
                                 </DataGridTemplateColumn.CellTemplate>
-                                <DataGridTemplateColumn.CellEditingTemplate>
-                                    <DataTemplate>
-                                        <TextBox  Text="{Binding Path=ParamValue,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,TargetNullValue=请输入电阻}"></TextBox>
-                                    </DataTemplate>
-                                </DataGridTemplateColumn.CellEditingTemplate>
                             </DataGridTemplateColumn>
-                        </DataGrid.Columns>
+                        </DataGrid.Columns >
                     </DataGrid>
-                    <!--<Grid Width="35">
-                        <TextBlock  MouseLeftButtonUp="btnAdd_Click"
-                                x:Name="Add_textBlock"
-                                FontSize="35"
-                                Text="&#xf055;"
-                                Margin="0"
-                                Foreground="CornflowerBlue"
-                                Grid.Column="0" 
-                                FontFamily="pack://application:,,,/ResourceBase;component/Font/#icomoon"
-                                VerticalAlignment="Center" 
-                                MinWidth="20"/>
-                    </Grid>-->
                 </StackPanel>
             </ScrollViewer>
         </Grid>

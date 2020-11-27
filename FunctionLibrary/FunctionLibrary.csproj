@@ -68,6 +68,9 @@
     <Compile Include="FileOperation\Json\JsonFileOperation1.xaml.cs">
       <DependentUpon>JsonFileOperation1.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Lights\Lights1.xaml.cs">
+      <DependentUpon>Lights1.xaml</DependentUpon>
+    </Compile>
     <Compile Include="LoadConfigMenu\DataHandle\SaveXmlData.cs" />
     <Compile Include="LoadConfigMenu\Model\MenuData.cs" />
     <Compile Include="LoadConfigMenu\Model\MenuInfo.cs" />
@@ -75,6 +78,13 @@
     <Compile Include="Magnifier\Magnifier1.xaml.cs">
       <DependentUpon>Magnifier1.xaml</DependentUpon>
     </Compile>
+    <Compile Include="MessageProcessing\MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MessageProcessing\NotificationWindow.xaml.cs">
+      <DependentUpon>NotificationWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MessageProcessing\NotificationWindowApp.cs" />
     <Compile Include="ModbusCommStudy\MB_UsbHid_Operate.cs" />
     <Compile Include="ModbusCommStudy\ToolBar_Project.xaml.cs">
       <DependentUpon>ToolBar_Project.xaml</DependentUpon>
@@ -136,7 +146,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Lights\Lights1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Magnifier\Magnifier1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MessageProcessing\MainWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MessageProcessing\NotificationWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -158,6 +180,10 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\BaseClassLibrary\BaseClassLibrary.csproj">
+      <Project>{9e32a112-d8c8-468d-ad86-36bfc6790cb0}</Project>
+      <Name>BaseClassLibrary</Name>
+    </ProjectReference>
     <ProjectReference Include="..\LocalTool\LocalTool.csproj">
       <Project>{13c2b01d-edb7-4fa0-8b84-9d10148610d4}</Project>
       <Name>LocalTool</Name>

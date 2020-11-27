@@ -1,4 +1,5 @@
-﻿using LiveCharts;
+﻿using BaseClassLibrary;
+using LiveCharts;
 using LiveCharts.Configurations;
 using LiveCharts.Defaults;
 using LiveCharts.Events;
@@ -24,9 +25,12 @@ using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Threading;
+using TemplateLibrary.ListBox;
 using Wpf_Arrows_Package;
 
 namespace TestProject
@@ -39,10 +43,18 @@ namespace TestProject
         public MainWindow()
         {
             InitializeComponent();
+            Init();
+
         }
+
         public void Init()
         {
 
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            string var = this.IpAddressContent.IP;
         }
     }
 }

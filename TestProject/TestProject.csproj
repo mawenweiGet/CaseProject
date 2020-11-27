@@ -8,7 +8,7 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>TestProject</RootNamespace>
     <AssemblyName>TestProject</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <WarningLevel>4</WarningLevel>
@@ -50,6 +50,7 @@
       <HintPath>..\packages\System.Drawing.Common.4.7.0\lib\net461\System.Drawing.Common.dll</HintPath>
     </Reference>
     <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
@@ -69,10 +70,17 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="IpAddressControl.xaml.cs">
+      <DependentUpon>IpAddressControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Test.xaml.cs">
       <DependentUpon>Test.xaml</DependentUpon>
     </Compile>
     <Page Include="DivdingTableControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="IpAddressControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -118,7 +126,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -128,6 +135,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\BaseClassLibrary\BaseClassLibrary.csproj">
+      <Project>{9e32a112-d8c8-468d-ad86-36bfc6790cb0}</Project>
+      <Name>BaseClassLibrary</Name>
+    </ProjectReference>
     <ProjectReference Include="..\LocalTool\LocalTool.csproj">
       <Project>{13c2b01d-edb7-4fa0-8b84-9d10148610d4}</Project>
       <Name>LocalTool</Name>
@@ -140,24 +151,40 @@
       <Project>{8bf815eb-e746-47ce-a2de-45f38a6441fe}</Project>
       <Name>ResourceBase</Name>
     </ProjectReference>
+    <ProjectReference Include="..\TemplateLibrary\TemplateLibrary.csproj">
+      <Project>{8f40b3dc-f9cf-4030-b278-236c989b1ba7}</Project>
+      <Name>TemplateLibrary</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Wpf_Arrows_Package\Wpf_Arrows_Package.csproj">
       <Project>{7c57e81c-386a-4120-8bb2-5eb4738562c2}</Project>
       <Name>Wpf_Arrows_Package</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="res\1.1.png" />
-    <Resource Include="res\1.2.png" />
-    <Resource Include="res\1.3.png" />
-    <Resource Include="res\1.4.png" />
-    <Resource Include="res\1.5.png" />
-    <Resource Include="res\1.6.png" />
-    <Resource Include="res\2.1.png" />
-    <Resource Include="res\2.2.png" />
-    <Resource Include="res\2.3.png" />
-    <Resource Include="res\2.4.png" />
-    <Resource Include="res\2.5.png" />
-    <Resource Include="res\2.6.png" />
+    <Resource Include="res\1.png" />
+    <Resource Include="res\2.png" />
+    <Resource Include="res\3.png" />
+    <Resource Include="res\4.png" />
+    <Content Include="res\SL8272_mV_OutI.svg" />
+    <Content Include="res\SL8272_mV_OutV.svg" />
+    <Content Include="res\SL8272_Rtd_2wire_OutI.svg" />
+    <Content Include="res\SL8272_Rtd_2wire_OutV.svg" />
+    <Content Include="res\SL8272_Rtd_3wire_OutI.svg" />
+    <Content Include="res\SL8272_Rtd_3wire_OutV.svg" />
+    <Content Include="res\SL8272_Rtd_4wire_OutI.svg" />
+    <Content Include="res\SL8272_Rtd_4wire_OutV.svg" />
+    <Content Include="res\SL8272_R_2wire_OutI.svg" />
+    <Content Include="res\SL8272_R_2wire_OutV.svg" />
+    <Content Include="res\SL8272_R_3wire_OutI.svg" />
+    <Content Include="res\SL8272_R_3wire_OutV.svg" />
+    <Content Include="res\SL8272_R_4wire_OutI.svg" />
+    <Content Include="res\SL8272_R_4wire_OutV.svg" />
+    <Content Include="res\SL8272_Tc_cjcExt_OutI.svg" />
+    <Content Include="res\SL8272_Tc_cjcExt_OutV.svg" />
+    <Content Include="res\SL8272_Tc_cjcFixed_OutI.svg" />
+    <Content Include="res\SL8272_Tc_cjcFixed_OutV.svg" />
+    <Content Include="res\SL8272_Tc_cjcInt_OutI.svg" />
+    <Content Include="res\SL8272_Tc_cjcInt_OutV.svg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

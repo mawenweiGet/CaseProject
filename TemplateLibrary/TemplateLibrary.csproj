@@ -63,6 +63,9 @@
     <Compile Include="AnimationStyle\AnimationTemplate1.xaml.cs">
       <DependentUpon>AnimationTemplate1.xaml</DependentUpon>
     </Compile>
+    <Compile Include="AnimationStyle\EventTrigger1.xaml.cs">
+      <DependentUpon>EventTrigger1.xaml</DependentUpon>
+    </Compile>
     <Compile Include="AnimationStyle\GIFAnimationTemplate.xaml.cs">
       <DependentUpon>GIFAnimationTemplate.xaml</DependentUpon>
     </Compile>
@@ -78,11 +81,20 @@
     <Compile Include="BaseControlPromotionTemplate\DataGridControl\TableControl.xaml.cs">
       <DependentUpon>TableControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="BaseControlPromotionTemplate\DataGridControl\TableControl2.xaml.cs">
+      <DependentUpon>TableControl2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BaseControlPromotionTemplate\DataGridControl\TableControl3.xaml.cs">
+      <DependentUpon>TableControl3.xaml</DependentUpon>
+    </Compile>
     <Compile Include="BaseControlPromotionTemplate\Input_Information\InputInformation1.xaml.cs">
       <DependentUpon>InputInformation1.xaml</DependentUpon>
     </Compile>
     <Compile Include="BaseControlPromotionTemplate\SwitchChoice\SwitchChoice1.xaml.cs">
       <DependentUpon>SwitchChoice1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BaseControlPromotionTemplate\SwitchChoice\SwitchChoice2.xaml.cs">
+      <DependentUpon>SwitchChoice2.xaml</DependentUpon>
     </Compile>
     <Compile Include="BaseControlPromotionTemplate\TimeControl\TimeControl1.xaml.cs">
       <DependentUpon>TimeControl1.xaml</DependentUpon>
@@ -132,6 +144,19 @@
     <Compile Include="BaseControlTemplate\Border\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="BaseControlTemplate\TextBok\IpAddressControl.xaml.cs">
+      <DependentUpon>IpAddressControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BaseControlTemplate\TextBok\MainWindows.xaml.cs">
+      <DependentUpon>MainWindows.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BaseControlTemplate\TextBok\NumbericTextBox.cs" />
+    <Compile Include="BaseControlTemplate\TextBok\TextBokTemplate2.xaml.cs">
+      <DependentUpon>TextBokTemplate2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BaseControlTemplate\TextBok\TextBokTemplate3.xaml.cs">
+      <DependentUpon>TextBokTemplate3.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -168,6 +193,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="AnimationStyle\EventTrigger1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="AnimationStyle\GIFAnimationTemplate.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -188,11 +217,23 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="BaseControlPromotionTemplate\DataGridControl\TableControl2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="BaseControlPromotionTemplate\DataGridControl\TableControl3.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="BaseControlPromotionTemplate\Input_Information\InputInformation1.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="BaseControlPromotionTemplate\SwitchChoice\SwitchChoice1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="BaseControlPromotionTemplate\SwitchChoice\SwitchChoice2.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -248,6 +289,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="BaseControlTemplate\TextBok\IpAddressControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="BaseControlTemplate\TextBok\MainWindows.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="BaseControlTemplate\TextBok\TextBokTemplate1.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -272,8 +321,20 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="BaseControlTemplate\TextBok\TextBokTemplate2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="BaseControlTemplate\TextBok\TextBokTemplate3.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\BaseClassLibrary\BaseClassLibrary.csproj">
+      <Project>{9e32a112-d8c8-468d-ad86-36bfc6790cb0}</Project>
+      <Name>BaseClassLibrary</Name>
+    </ProjectReference>
     <ProjectReference Include="..\LocalTool\LocalTool.csproj">
       <Project>{13c2b01d-edb7-4fa0-8b84-9d10148610d4}</Project>
       <Name>LocalTool</Name>

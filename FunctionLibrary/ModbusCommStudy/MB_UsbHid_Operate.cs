@@ -1,4 +1,5 @@
-﻿using LocalTool;
+﻿using BaseClassLibrary;
+using LocalTool;
 using Modbus.Device;
 using System;
 using System.Collections.Generic;

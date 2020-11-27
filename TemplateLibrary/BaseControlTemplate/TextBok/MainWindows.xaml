@@ -1,0 +1,17 @@
+﻿<UserControl x:Class="TemplateLibrary.BaseControlTemplate.TextBok.MainWindows"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:TemplateLibrary.BaseControlTemplate.TextBok"
+      mc:Ignorable="d">
+
+    <StackPanel>
+        <local:TextBokTemplate2/>
+        <local:TextBokTemplate3/>
+        <WrapPanel>
+            <Label Content="IP地址输入文本框："/>
+            <local:IpAddressControl/>
+        </WrapPanel>
+    </StackPanel>
+</UserControl>
